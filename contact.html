@@ -251,16 +251,61 @@ function handleContactSubmit(e) {
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
   if (!email || !message) { alert('Please fill in your email and message.'); return; }
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+  const btn = e.target;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const services = [...document.querySelectorAll('.services-checkboxes input:checked')].map(i => i.parentElement.textContent.trim()).join(', ');
+  const data = {
+    name: document.getElementById('fname').value + ' ' + document.getElementById('lname').value,
+    email: email,
+    company: document.getElementById('company').value,
+    services: services,
+    budget: document.getElementById('budget').value,
+    message: message
+  };
+  fetch('https://formspree.io/f/xrerzepn', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(r => r.json()).then(data => {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }).catch(() => {
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  });
 }
 function handleRFPSubmit(e) {
   e.preventDefault();
   const company = document.getElementById('rfp-company').value;
   const scope = document.getElementById('rfp-scope').value;
   if (!company || !scope) { alert('Please fill in your organization name and project scope.'); return; }
-  document.getElementById('rfp-form').style.display = 'none';
-  document.getElementById('rfp-success').style.display = 'block';
+  const btn = e.target;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const data = {
+    organization: company,
+    contact: document.getElementById('rfp-contact').value,
+    email: document.getElementById('rfp-email').value,
+    project: document.getElementById('rfp-title').value,
+    timeline: document.getElementById('rfp-timeline').value,
+    budget: document.getElementById('rfp-budget').value,
+    scope: scope,
+    criteria: document.getElementById('rfp-criteria').value
+  };
+  fetch('https://formspree.io/f/mjgjbgwk', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(r => r.json()).then(data => {
+    document.getElementById('rfp-form').style.display = 'none';
+    document.getElementById('rfp-success').style.display = 'block';
+  }).catch(() => {
+    btn.textContent = 'Submit RFP →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  });
 }
 </script>
 </body>
