@@ -132,7 +132,7 @@
       <div class="contact-form-card reveal reveal-d2">
         <h3>Tell us about your project</h3>
         <p class="sub">We'll get back to you within one business day.</p>
-        <div id="contact-form">
+        <form id="contact-form" action="https://formspree.io/f/xrerzepn" method="POST">
           <div class="form-row">
             <div class="form-group"><label for="fname">First Name *</label><input type="text" id="fname" placeholder="Ahmad" /></div>
             <div class="form-group"><label for="lname">Last Name *</label><input type="text" id="lname" placeholder="Hassan" /></div>
@@ -156,9 +156,9 @@
           <div class="form-group"><label for="message">Tell us about your project *</label><textarea id="message" placeholder="What are you trying to build or solve? What does success look like?"></textarea></div>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
             <p style="font-size:0.8rem;color:var(--stone);">We'll reply within 1 business day.</p>
-            <button class="btn btn-primary" onclick="handleContactSubmit(event)">Send Message →</button>
+            <button type="submit" class="btn btn-primary">Send Message →</button>
           </div>
-        </div>
+        </form>
         <div class="form-success" id="form-success"><div class="check">✅</div><h4>Message received!</h4><p>Thank you for reaching out. We'll be in touch within one business day.</p></div>
       </div>
     </div>
@@ -173,7 +173,7 @@
         <p class="section-sub" style="text-align:center;margin:0 auto 2.5rem;">For larger engagements, submit your RFP and our team will prepare a detailed response within 5 business days.</p>
       </div>
       <div class="rfp-card reveal">
-        <div id="rfp-form">
+        <form id="rfp-form" action="https://formspree.io/f/mjgjbgwk" method="POST">
           <div class="form-group"><label>Organization Name *</label><input type="text" id="rfp-company" placeholder="Your organization" /></div>
           <div class="form-row">
             <div class="form-group"><label>Contact Name *</label><input type="text" id="rfp-contact" placeholder="Full name" /></div>
@@ -187,9 +187,9 @@
           <div class="form-group"><label>Project Scope & Requirements *</label><textarea id="rfp-scope" style="min-height:160px;" placeholder="Describe the project scope, technical requirements, deliverables, and any relevant context."></textarea></div>
           <div class="form-group"><label>Evaluation Criteria</label><textarea id="rfp-criteria" placeholder="How will you evaluate proposals? What matters most?" style="min-height:80px;"></textarea></div>
           <div style="display:flex;justify-content:flex-end;margin-top:0.5rem;">
-            <button class="btn btn-teal btn-lg" onclick="handleRFPSubmit(event)">Submit RFP →</button>
+            <button type="submit" class="btn btn-teal btn-lg">Submit RFP →</button>
           </div>
-        </div>
+        </form>
         <div class="form-success" id="rfp-success"><div class="check">📋</div><h4>RFP submitted!</h4><p>Our team will review your brief and respond within 5 business days.</p></div>
       </div>
     </div>
