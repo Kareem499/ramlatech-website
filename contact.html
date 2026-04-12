@@ -134,26 +134,26 @@
         <p class="sub">We'll get back to you within one business day.</p>
         <form id="contact-form" action="https://formspree.io/f/xrerzepn" method="POST">
           <div class="form-row">
-            <div class="form-group"><label for="fname">First Name *</label><input type="text" id="fname" placeholder="Ahmad" /></div>
-            <div class="form-group"><label for="lname">Last Name *</label><input type="text" id="lname" placeholder="Hassan" /></div>
+            <div class="form-group"><label for="fname">First Name *</label><input type="text" id="fname" name="first_name" placeholder="Ahmad" /></div>
+            <div class="form-group"><label for="lname">Last Name *</label><input type="text" id="lname" name="last_name" placeholder="Hassan" /></div>
           </div>
-          <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" placeholder="ahmad@company.com" /></div>
-          <div class="form-group"><label for="company">Company / Organization</label><input type="text" id="company" placeholder="Your company name" /></div>
+          <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" placeholder="ahmad@company.com" /></div>
+          <div class="form-group"><label for="company">Company / Organization</label><input type="text" id="company" name="company" placeholder="Your company name" /></div>
           <div class="form-group">
             <label>Services you're interested in</label>
             <div class="services-checkboxes">
-              <label class="service-check"><input type="checkbox" /> Mobile Development</label>
-              <label class="service-check"><input type="checkbox" /> Web Development</label>
-              <label class="service-check"><input type="checkbox" /> Custom Software</label>
-              <label class="service-check"><input type="checkbox" /> AI & Automation</label>
-              <label class="service-check"><input type="checkbox" /> Cybersecurity</label>
-              <label class="service-check"><input type="checkbox" /> CTO on Demand</label>
-              <label class="service-check"><input type="checkbox" /> Digital Transformation</label>
-              <label class="service-check"><input type="checkbox" /> Staff Augmentation</label>
+              <label class="service-check"><input type="checkbox" name="service" value="Mobile Development" /> Mobile Development</label>
+              <label class="service-check"><input type="checkbox" name="service" value="Web Development" /> Web Development</label>
+              <label class="service-check"><input type="checkbox" name="service" value="Custom Software" /> Custom Software</label>
+              <label class="service-check"><input type="checkbox" name="service" value="AI & Automation" /> AI & Automation</label>
+              <label class="service-check"><input type="checkbox" name="service" value="Cybersecurity" /> Cybersecurity</label>
+              <label class="service-check"><input type="checkbox" name="service" value="CTO on Demand" /> CTO on Demand</label>
+              <label class="service-check"><input type="checkbox" name="service" value="Digital Transformation" /> Digital Transformation</label>
+              <label class="service-check"><input type="checkbox" name="service" value="Staff Augmentation" /> Staff Augmentation</label>
             </div>
           </div>
-          <div class="form-group"><label for="budget">Approximate Budget</label><select id="budget"><option value="">Select a range</option><option>Under $10,000</option><option>$10,000 – $30,000</option><option>$30,000 – $100,000</option><option>$100,000+</option><option>Let's discuss</option></select></div>
-          <div class="form-group"><label for="message">Tell us about your project *</label><textarea id="message" placeholder="What are you trying to build or solve? What does success look like?"></textarea></div>
+          <div class="form-group"><label for="budget">Approximate Budget</label><select id="budget" name="budget"><option value="">Select a range</option><option>Under $10,000</option><option>$10,000 – $30,000</option><option>$30,000 – $100,000</option><option>$100,000+</option><option>Let's discuss</option></select></div>
+          <div class="form-group"><label for="message">Tell us about your project *</label><textarea id="message" name="message" placeholder="What are you trying to build or solve? What does success look like?"></textarea></div>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
             <p style="font-size:0.8rem;color:var(--stone);">We'll reply within 1 business day.</p>
             <button type="submit" class="btn btn-primary">Send Message →</button>
@@ -174,18 +174,18 @@
       </div>
       <div class="rfp-card reveal">
         <form id="rfp-form" action="https://formspree.io/f/mjgjbgwk" method="POST">
-          <div class="form-group"><label>Organization Name *</label><input type="text" id="rfp-company" placeholder="Your organization" /></div>
+          <div class="form-group"><label>Organization Name *</label><input type="text" id="rfp-company" name="organization" placeholder="Your organization" /></div>
           <div class="form-row">
-            <div class="form-group"><label>Contact Name *</label><input type="text" id="rfp-contact" placeholder="Full name" /></div>
-            <div class="form-group"><label>Contact Email *</label><input type="email" id="rfp-email" placeholder="email@org.com" /></div>
+            <div class="form-group"><label>Contact Name *</label><input type="text" id="rfp-contact" name="contact_name" placeholder="Full name" /></div>
+            <div class="form-group"><label>Contact Email *</label><input type="email" id="rfp-email" name="email" placeholder="email@org.com" /></div>
           </div>
-          <div class="form-group"><label>Project Title *</label><input type="text" id="rfp-title" placeholder="e.g. Mobile App for Healthcare Platform" /></div>
+          <div class="form-group"><label>Project Title *</label><input type="text" id="rfp-title" name="project_title" placeholder="e.g. Mobile App for Healthcare Platform" /></div>
           <div class="form-row">
-            <div class="form-group"><label>Timeline</label><select id="rfp-timeline"><option value="">Select timeline</option><option>ASAP / Urgent</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>12+ months</option></select></div>
-            <div class="form-group"><label>Budget Range</label><select id="rfp-budget"><option value="">Select range</option><option>$30,000 – $50,000</option><option>$50,000 – $100,000</option><option>$100,000 – $250,000</option><option>$250,000+</option></select></div>
+            <div class="form-group"><label>Timeline</label><select id="rfp-timeline" name="timeline"><option value="">Select timeline</option><option>ASAP / Urgent</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>12+ months</option></select></div>
+            <div class="form-group"><label>Budget Range</label><select id="rfp-budget" name="budget"><option value="">Select range</option><option>$30,000 – $50,000</option><option>$50,000 – $100,000</option><option>$100,000 – $250,000</option><option>$250,000+</option></select></div>
           </div>
-          <div class="form-group"><label>Project Scope & Requirements *</label><textarea id="rfp-scope" style="min-height:160px;" placeholder="Describe the project scope, technical requirements, deliverables, and any relevant context."></textarea></div>
-          <div class="form-group"><label>Evaluation Criteria</label><textarea id="rfp-criteria" placeholder="How will you evaluate proposals? What matters most?" style="min-height:80px;"></textarea></div>
+          <div class="form-group"><label>Project Scope & Requirements *</label><textarea id="rfp-scope" name="scope" style="min-height:160px;" placeholder="Describe the project scope, technical requirements, deliverables, and any relevant context."></textarea></div>
+          <div class="form-group"><label>Evaluation Criteria</label><textarea id="rfp-criteria" name="criteria" placeholder="How will you evaluate proposals? What matters most?" style="min-height:80px;"></textarea></div>
           <div style="display:flex;justify-content:flex-end;margin-top:0.5rem;">
             <button type="submit" class="btn btn-teal btn-lg">Submit RFP →</button>
           </div>
