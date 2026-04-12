@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Ramlatech</title>
+<link rel="icon" type="image/png" href="assets/mark-navy.png" />
+<link rel="stylesheet" href="main.css" />
+<style>
+.page-hero { background: linear-gradient(150deg, #0a1c33 0%, #0E1F38 60%, #0d2840 100%); padding: 11rem 0 7rem; position: relative; overflow: hidden; }
+.page-hero-bg { position: absolute; inset: 0; background-image: radial-gradient(circle at 70% 50%, rgba(196,136,43,0.07) 0%, transparent 55%), radial-gradient(circle at 20% 80%, rgba(11,138,138,0.08) 0%, transparent 45%); pointer-events: none; }
+.page-hero-dots { position: absolute; top: 60px; right: 5%; width: 280px; height: 280px; background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 1.5px); background-size: 26px 26px; pointer-events: none; }
+.eyebrow { font-family: var(--font-display); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem; }
+.eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--gold); }
+.page-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; color: var(--white); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+.page-hero h1 span { color: var(--gold); }
+.page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 560px; line-height: 1.75; }
+.story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.story-text h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); color: var(--navy); margin-bottom: 1.25rem; letter-spacing: -0.02em; font-family: var(--font-display); font-weight: 700; }
+.story-text p { color: var(--stone); line-height: 1.8; margin-bottom: 1rem; }
+.story-text p strong { color: var(--navy); }
+.story-visual { display: flex; flex-direction: column; gap: 1.25rem; }
+.name-anatomy { background: var(--navy); border-radius: 20px; padding: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 0; text-align: center; }
+.anat-part { padding: 0 1.5rem; }
+.anat-part .word { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1; }
+.anat-part .meaning { font-size: 0.8rem; margin-top: 0.5rem; font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.anat-divider { font-family: var(--font-display); font-size: 1.5rem; color: rgba(255,255,255,0.2); padding: 0 0.5rem; }
+.anat-result { background: rgba(196,136,43,0.1); border: 1px solid rgba(196,136,43,0.3); border-radius: 16px; padding: 1.75rem; text-align: center; }
+.anat-result .word { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; }
+.anat-result .meaning { font-size: 0.85rem; color: var(--stone); margin-top: 0.4rem; }
+.year-badge { background: var(--sand); border-radius: 14px; padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.25rem; }
+.year-badge .year { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.year-badge p { font-size: 0.9rem; color: var(--stone); line-height: 1.6; }
+.mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.mv-card { border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; }
+.mv-card.mission { background: var(--navy); }
+.mv-card.vision { background: linear-gradient(135deg, var(--gold) 0%, #a97323 100%); }
+.mv-card .label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+.mv-card.mission .label { color: var(--teal); }
+.mv-card.vision .label { color: rgba(255,255,255,0.7); }
+.mv-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+.mv-card p { color: rgba(255,255,255,0.75); line-height: 1.75; font-size: 0.95rem; }
+.mv-card .big-icon { position: absolute; bottom: -20px; right: -10px; font-size: 7rem; opacity: 0.06; pointer-events: none; }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.value-card { background: var(--white); border-radius: 16px; padding: 2rem; border-bottom: 3px solid transparent; transition: all 0.3s var(--ease); }
+.value-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(14,31,56,0.1); }
+.value-card:nth-child(1) { border-bottom-color: var(--olive); }
+.value-card:nth-child(2) { border-bottom-color: var(--gold); }
+.value-card:nth-child(3) { border-bottom-color: var(--teal); }
+.value-card:nth-child(4) { border-bottom-color: var(--navy); }
+.value-card:nth-child(5) { border-bottom-color: var(--gold); }
+.value-icon { font-size: 2rem; margin-bottom: 1rem; }
+.value-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+.value-card p { font-size: 0.88rem; color: var(--stone); line-height: 1.65; }
+.about-cta { background: var(--navy); padding: 6rem 0; text-align: center; position: relative; overflow: hidden; }
+.about-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(196,136,43,0.1) 0%, transparent 60%); }
+.about-cta h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+.about-cta h2 span { color: var(--gold); }
+.about-cta p { color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; font-size: 1.05rem; }
+@media(max-width:900px) { .story-layout { grid-template-columns: 1fr; gap: 2.5rem; } .mv-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:640px) { .values-grid { grid-template-columns: 1fr; } .name-anatomy { flex-direction: column; } }
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo"><img src="assets/logo-nav.png" alt="Ramlatech" /></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html#book" class="nav-cta">Book a Call</a>
+  </div>
+  <div class="nav-burger"><span></span><span></span><span></span></div>
+</nav>
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-dots"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="eyebrow anim-up">Our Story</div>
+    <h1 class="anim-up anim-up-d1">Where we come from<br/>shapes <span>what we build</span></h1>
+    <p class="anim-up anim-up-d2">Named after one of Palestine's oldest cities, Ramlatech is a software agency with deep roots and a global mission — bridging heritage and innovation, one project at a time.</p>
+  </div>
+</section>
+<section class="section-pad-lg" style="background:var(--pearl);" id="story">
+  <div class="container">
+    <div class="story-layout">
+      <div class="story-text reveal">
+        <div class="section-label">The Name</div>
+        <h2>A name with <span style="color:var(--gold);">1,300 years</span> of history behind it</h2>
+        <p>Ramlatech is named after <strong>Ramla</strong> — one of Palestine's oldest cities, founded in <strong>705 CE</strong>. Rich in history, architecture, and resilience, Ramla represents everything our company stands on: deep roots, enduring strength, and a commitment to legacy.</p>
+        <p>The <strong>Tech</strong> in our name is our compass — pointing toward digital transformation, modern software, and the power of innovation to reshape the world.</p>
+        <p>Together, Ramlatech embodies a bridge: between heritage and the future, between local identity and global impact. We believe that the most meaningful technology is built by people who know where they come from — and who build with purpose.</p>
+      </div>
+      <div class="story-visual reveal reveal-d2">
+        <div class="name-anatomy">
+          <div class="anat-part"><div class="word" style="color:var(--gold);">Ramla</div><div class="meaning">Ramla, Palestine</div></div>
+          <div class="anat-divider">+</div>
+          <div class="anat-part"><div class="word" style="color:#3ecfcf;">tech</div><div class="meaning">Technology</div></div>
+        </div>
+        <div class="anat-result">
+          <div class="word"><span style="color:var(--navy);">Ramla</span><span style="color:var(--gold);">tech</span></div>
+          <div class="meaning">Heritage × Innovation</div>
+        </div>
+        <div class="year-badge">
+          <div class="year">705 CE</div>
+          <p>Ramla was founded — one of Palestine's most ancient and storied cities. Our roots run as deep as its history.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-pad" style="background:var(--white);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <div class="section-label" style="justify-content:center;">Purpose</div>
+      <h2 class="section-title" style="text-align:center;">Mission & <span>Vision</span></h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card mission reveal reveal-d1">
+        <div class="label">Mission</div>
+        <h3>What we do every day</h3>
+        <p>To deliver transformative technology solutions that empower businesses globally — with integrity, excellence, and human-centered values rooted in our Palestinian heritage.</p>
+        <div class="big-icon">🎯</div>
+      </div>
+      <div class="mv-card vision reveal reveal-d2">
+        <div class="label">Vision</div>
+        <h3>Where we're heading</h3>
+        <p>To be a globally trusted technology partner that proves innovation and identity are not opposites — they are the most powerful combination.</p>
+        <div class="big-icon">🌍</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-pad" style="background:var(--pearl);" id="values">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">What We Stand For</div>
+      <h2 class="section-title">Our Core <span>Values</span></h2>
+      <p class="section-sub">Five principles that guide every decision, every project, every relationship.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal reveal-d1"><div class="value-icon">🌱</div><h3>Roots</h3><p>We are proudly rooted in Ramla, Palestine. Our origins are not just geography — they are the foundation of our identity and the source of our strength.</p></div>
+      <div class="value-card reveal reveal-d2"><div class="value-icon">💡</div><h3>Innovation</h3><p>We stay at the frontier of technology — AI, automation, cybersecurity — and translate that into practical solutions that move businesses forward.</p></div>
+      <div class="value-card reveal reveal-d3"><div class="value-icon">🤝</div><h3>Integrity</h3><p>We operate with radical transparency and honesty in every engagement, treating our clients' challenges as our own to solve.</p></div>
+      <div class="value-card reveal reveal-d1"><div class="value-icon">🌍</div><h3>Impact</h3><p>Technology is a vehicle for change. We measure our success not just in deliverables, but in the meaningful difference we create for people and organizations.</p></div>
+      <div class="value-card reveal reveal-d2"><div class="value-icon">⭐</div><h3>Excellence</h3><p>We hold ourselves to the highest standards of quality in engineering, design, and communication. Good enough is never good enough for us.</p></div>
+    </div>
+  </div>
+</section>
+<section class="about-cta">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="reveal">
+      <h2>Ready to work with a team that <span>builds with purpose?</span></h2>
+      <p>Let's start with a conversation — tell us about your project and we'll tell you what's possible.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html#book" class="btn btn-primary btn-lg">Book a Free Consultation →</a>
+        <a href="services.html" class="btn btn-secondary btn-lg">Explore Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-nav.png" alt="Ramlatech" style="height:64px;" />
+        <p>Rooted in Heritage. Driven by Innovation. A software agency built from Ramla, Palestine — delivering transformative technology to the world.</p>
+        <div class="footer-social" style="margin-top:1.25rem;"><a href="#">in</a><a href="#">𝕏</a><a href="#">⌥</a></div>
+      </div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#values">Our Values</a><a href="about.html#story">Our Story</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="services.html#mobile">Mobile Dev</a><a href="services.html#web">Web Dev</a><a href="services.html#ai">AI & Automation</a><a href="services.html#security">Cybersecurity</a><a href="services.html">All Services</a></div>
+      <div class="footer-col"><h4>Get Started</h4><a href="contact.html#book">Book a Consultation</a><a href="contact.html#rfp">Submit an RFP</a><a href="contact.html">Contact Us</a><a href="mailto:hello@ramlatech.com">hello@ramlatech.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Ramlatech. All rights reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.8rem;color:rgba(255,255,255,0.3);">ramlatech.com · Software Agency · Est. Palestine</span>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
