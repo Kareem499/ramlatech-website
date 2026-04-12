@@ -24,7 +24,7 @@
 .perk-icon { width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px; background: rgba(11,138,138,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
 .booking-perk h4 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
 .booking-perk p { font-size: 0.85rem; color: var(--stone); margin: 0; line-height: 1.5; }
-.calendar-embed-wrap { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(14,31,56,0.1); border: 1px solid rgba(14,31,56,0.07); }
+.calendar-embed-wrap { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(14,31,56,0.1); border: 1px solid rgba(14,31,56,0.07); height: 100%; display: flex; flex-direction: column; }
 .calendar-embed-header { background: var(--navy); padding: 1.25rem 1.75rem; display: flex; align-items: center; gap: 0.75rem; }
 .calendar-embed-header img { height: 28px; }
 .calendar-embed-header span { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.85); }
@@ -105,7 +105,7 @@
             <img src="assets/mark-white.png" alt="Ramlatech" />
             <span>Book a Free Consultation · 30 min</span>
           </div>
-          <div style="padding:3rem 2rem;text-align:center;"><div style="font-size:4rem;margin-bottom:1.5rem;">📅</div><h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Schedule your free 30-minute call</h3><p style="color:var(--stone);margin-bottom:2rem;line-height:1.7;">Pick a time that works for you.</p><a href="https://calendar.app.google/iimx72oQiLnDs8EJ9" target="_blank" class="btn btn-primary btn-lg">Book Your Consultation →</a></div>
+          <div style="padding:3rem 2rem;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;"><div style="font-size:4rem;margin-bottom:1.5rem;">📅</div><h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Schedule your free 30-minute call</h3><p style="color:var(--stone);margin-bottom:2rem;line-height:1.7;">Pick a time that works for you.</p><a href="https://calendar.app.google/iimx72oQiLnDs8EJ9" target="_blank" class="btn btn-primary btn-lg">Book Your Consultation →</a></div>
         </div>
         <p style="text-align:center;font-size:0.82rem;color:var(--stone);margin-top:1rem;">Prefer email? <a href="mailto:hello@ramlatech.com" style="color:var(--teal);font-weight:500;">hello@ramlatech.com</a></p>
       </div>
