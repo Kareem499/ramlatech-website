@@ -133,6 +133,7 @@
         <h3>Tell us about your project</h3>
         <p class="sub">We'll get back to you within one business day.</p>
         <form id="contact-form" action="https://formspree.io/f/xrerzepn" method="POST">
+  <input type="hidden" name="_next" value="https://kareem499.github.io/ramlatech-website/contact.html?success=contact" />
           <div class="form-row">
             <div class="form-group"><label for="fname">First Name *</label><input type="text" id="fname" name="first_name" placeholder="Ahmad" /></div>
             <div class="form-group"><label for="lname">Last Name *</label><input type="text" id="lname" name="last_name" placeholder="Hassan" /></div>
@@ -183,6 +184,7 @@
       </div>
       <div class="rfp-card reveal">
         <form id="rfp-form" action="https://formspree.io/f/mjgjbgwk" method="POST">
+  <input type="hidden" name="_next" value="https://kareem499.github.io/ramlatech-website/contact.html?success=rfp" />
           <div class="form-group"><label>Organization Name *</label><input type="text" id="rfp-company" name="organization" placeholder="Your organization" /></div>
           <div class="form-row">
             <div class="form-group"><label>Contact Name *</label><input type="text" id="rfp-contact" name="contact_name" placeholder="Full name" /></div>
@@ -266,6 +268,19 @@ document.querySelectorAll('.faq-q').forEach(q => {
 });
 
 
+</script>
+<script>
+const params = new URLSearchParams(window.location.search);
+if (params.get('success') === 'contact') {
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+  document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+}
+if (params.get('success') === 'rfp') {
+  document.getElementById('rfp-form').style.display = 'none';
+  document.getElementById('rfp-success').style.display = 'block';
+  document.getElementById('rfp-success').scrollIntoView({ behavior: 'smooth' });
+}
 </script>
 </body>
 </html>
