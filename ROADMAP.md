@@ -12,12 +12,13 @@
 - SVG icons replacing emojis across all pages
 - Google Business Profile created and verified
 - Google Ads campaign set up with $250 credit targeting GCC, USA, Canada, UK, and Jordan
+- Google Analytics GA4 added to all pages (G-KXS97MYKLJ)
+- sitemap.xml submitted to Google Search Console
 
 ## Pending
 - Monitor Google Ads performance
 - Monitor Google Business Profile for reviews
 - Respond to Google reviews promptly
-- Add Google Analytics to track website traffic
 - Email confirmation to form submitters (Web3Forms or similar)
 
 ## Future Roadmap
