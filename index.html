@@ -307,12 +307,44 @@
     </div>
   </div>
 </section>
+<section class="newsletter-band" aria-label="Newsletter signup">
+  <div class="container">
+    <div class="newsletter-grid">
+      <div class="newsletter-left">
+        <div class="newsletter-eyebrow">STAY ROOTED</div>
+        <h2 class="newsletter-h2">Insights from <span>Ramla</span> to your inbox</h2>
+        <p class="newsletter-p">One thoughtful email a month on digital transformation, AI, and software built with purpose. No noise, no fluff.</p>
+      </div>
+      <div class="newsletter-right">
+        <form class="newsletter-form" data-newsletter="band" action="https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe" method="POST">
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <label class="sr-only" for="nl-band-email">Email</label>
+          <div class="newsletter-input-wrap">
+            <input type="email" id="nl-band-email" name="fields[email]" required placeholder="you@company.com" aria-label="Email" class="newsletter-input" autocomplete="email">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </div>
+          <p class="newsletter-helper">Confirm via email. Unsubscribe anytime.</p>
+        </form>
+        <div class="newsletter-success">Thanks — check your inbox to confirm.</div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo-nav.png" alt="Ramlatech boutique software agency logo" style="height:64px;" />
         <p>Rooted in Heritage. Driven by Innovation. A software agency built from Ramla, Palestine — delivering transformative technology to the world.</p>
+        <form class="footer-nl-form" data-newsletter="footer" action="https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe" method="POST">
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <label class="sr-only" for="nl-footer-email">Email</label>
+          <input type="email" id="nl-footer-email" name="fields[email]" required placeholder="Newsletter email" aria-label="Email" class="footer-nl-input" autocomplete="email">
+          <button type="submit" class="footer-nl-btn">→</button>
+        </form>
+        <div class="footer-nl-success">Thanks — check your inbox to confirm.</div>
         <div class="footer-social" style="margin-top:1.25rem;">
   <a href="https://www.linkedin.com/company/ramlatech" target="_blank" title="LinkedIn">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -336,5 +368,6 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
 </body>
 </html>

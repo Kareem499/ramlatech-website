@@ -31,3 +31,21 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     a.classList.add('active');
   }
 });
+// Newsletter signup — band + footer
+document.querySelectorAll('[data-newsletter]').forEach(form => {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = form.querySelector('input[name="fields[email]"]').value;
+    const data = new URLSearchParams({ 'fields[email]': email, 'ml-submit': '1', 'anticsrf': 'true' });
+    try {
+      await fetch('https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data,
+        mode: 'no-cors'
+      });
+    } catch(err) {}
+    form.style.display = 'none';
+    form.nextElementSibling.style.display = 'block';
+  });
+});
