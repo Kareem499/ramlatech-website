@@ -251,10 +251,27 @@ ramlatech/
 | Plan | Free — up to 1,000 subscribers |
 | Group | Blog Subscribers |
 | Form name | Ramlatech Blog Newsletter |
+| Form ID | 184727574659729402 |
+| Subscribe endpoint | https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe |
 | Form preview | https://preview.mailerlite.io/forms/2267517/184727574659729402/share |
-| Status | Form created — embed into blog page pending |
+| Status | Live — embedded on all pages |
 | Button color | #C4882B Gold |
 | Button text | White #FFFFFF |
+
+### Newsletter Implementation
+| Placement | Location | Description |
+|-----------|----------|-------------|
+| Band | index.html above footer | Full-width navy section "Stay Rooted" — two-column, stacks on mobile |
+| Footer | All pages (footer-brand column) | Compact inline form with → arrow button |
+
+### Technical Notes
+- Submission handled via `fetch()` with `mode: 'no-cors'` — fires to MailerLite, shows success state in-place
+- MailerLite webforms script loaded before `</body>` on all pages: `groot.mailerlite.com/js/w/webforms.min.js`
+- Double opt-in triggered by MailerLite after submission
+- Success message replaces form in-place without page reload
+- Hidden fields required: `ml-submit=1`, `anticsrf=true`
+- Email field name: `fields[email]`
+- Accessible: `sr-only` labels, `aria-label` on inputs, gold focus ring
 
 ---
 
@@ -366,7 +383,7 @@ To appear in ChatGPT, Perplexity, Claude, and other AI searches:
 ## 18. Pending Tasks
 
 ### High Priority
-- [ ] Embed MailerLite form into blog page
+- [x] Embed MailerLite newsletter form — live on all pages (band + footer)
 - [ ] Build blog.html
 - [ ] Write Blog Post 1 — MVP guide
 - [ ] Fix Google Search Console sitemap Couldn't fetch (check after 24h)
