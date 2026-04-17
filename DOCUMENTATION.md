@@ -309,8 +309,8 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 | Background | `#0E1F38` (dark navy) |
 | Border | `1px solid rgba(255,255,255,0.06)` top and bottom |
 | Padding | `1.5rem 0` |
-| Card size | `220×110px` |
-| Card style | White `#fff`, `border-radius: 12px`, `padding: 0.75rem` |
+| Card size | `300×150px` |
+| Card style | White `#fff`, `border-radius: 12px`, `padding: 0.5rem` |
 | Card opacity | `0.85` default, `1.0` on hover |
 | Hover effect | `opacity: 1` + `translateY(-2px)` |
 | Animation | `logoScroll` — CSS `@keyframes`, 40s linear infinite |
