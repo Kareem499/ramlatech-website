@@ -315,7 +315,8 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 | Hover effect | `opacity: 1` + `translateY(-2px)` |
 | Animation | `logoScroll` — CSS `@keyframes`, 40s linear infinite |
 | Loop method | 15 logos duplicated (30 total) — translate -50% for seamless loop |
-| Images | `<img>` tags, `object-fit: contain`, `max-width/max-height: 100%` |
+| Images | `<img>` tags, `width/height: 100%`, `object-fit: contain` |
+| Per-logo scale | `--logo-scale` CSS variable on each `.client-card` div, default `1`. To shrink a specific logo: `<div class="client-card" style="--logo-scale: 0.7">` |
 
 ### Assets
 All SVGs stored in `assets/clients/` — 15 files (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT, PMA, World Bank, Bank of Palestine, Fine HH, NFPC, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt).
