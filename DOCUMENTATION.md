@@ -82,7 +82,23 @@ ramlatech/
     ├── logo-nav.png        # Full logo — white text on navy — navbar
     ├── logo-white.png      # Full logo — white version — footer
     ├── mark-navy.png       # Arch mark — favicon
-    └── mark-white.png      # Arch mark — heritage section, booking card
+    ├── mark-white.png      # Arch mark — heritage section, booking card
+    └── clients/            # Client logo SVGs (15 files) — used in logo carousel
+        ├── 1 Paltel.svg
+        ├── 2 Jawwal.svg
+        ├── 3 Reach.svg
+        ├── 4 Palestinian Authority.svg
+        ├── 5 PCBS.svg
+        ├── 6 MTIT .svg
+        ├── 7 PMA.svg
+        ├── 8 World Bank.svg
+        ├── 9 Bank of Palestine.svg
+        ├── 10 Fine HH.svg
+        ├── 11 NFPC.svg
+        ├── 12 AlQuds Pharma.svg
+        ├── 13 GIZ.svg
+        ├── 14 Munib & Angela Masri Logo.svg
+        └── 15 Upliftt.svg
 ```
 
 ---
@@ -275,7 +291,38 @@ ramlatech/
 
 ---
 
-## 11. Google Business Profile
+## 11. Client Logo Carousel
+
+Auto-scrolling strip of client logos displayed on all four main pages.
+
+### Placement
+| Page | Position |
+|------|----------|
+| index.html | Below services ticker, above "What We Build" section |
+| about.html | Below page hero |
+| services.html | Below page hero, above services nav |
+| contact.html | Below page hero |
+
+### Design Specs
+| Property | Value |
+|----------|-------|
+| Background | `#0E1F38` (dark navy) |
+| Border | `1px solid rgba(255,255,255,0.06)` top and bottom |
+| Padding | `1.5rem 0` |
+| Card size | `160×80px` |
+| Card style | White `#fff`, `border-radius: 12px`, `padding: 1rem` |
+| Card opacity | `0.85` default, `1.0` on hover |
+| Hover effect | `opacity: 1` + `translateY(-2px)` |
+| Animation | `logoScroll` — CSS `@keyframes`, 40s linear infinite |
+| Loop method | 15 logos duplicated (30 total) — translate -50% for seamless loop |
+| Images | `<img>` tags, `object-fit: contain`, `max-width/max-height: 100%` |
+
+### Assets
+All SVGs stored in `assets/clients/` — 15 files (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT, PMA, World Bank, Bank of Palestine, Fine HH, NFPC, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt).
+
+---
+
+## 12. Google Business Profile
 
 | Item | Details |
 |------|---------|
@@ -384,6 +431,7 @@ To appear in ChatGPT, Perplexity, Claude, and other AI searches:
 
 ### High Priority
 - [x] Embed MailerLite newsletter form — live on all pages (band + footer)
+- [x] Add client logo carousel — all 4 pages (index, about, services, contact)
 - [ ] Build blog.html
 - [ ] Write Blog Post 1 — MVP guide
 - [ ] Fix Google Search Console sitemap Couldn't fetch (check after 24h)

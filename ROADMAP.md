@@ -1,6 +1,7 @@
 # Ramlatech Website Roadmap
 
 ## Completed
+- Client logo carousel added to all 4 pages (index, about, services, contact) — 15 ACT+ client SVGs, auto-scrolling, dark navy strip
 - Website launched on GitHub Pages
 - Custom domain configured: ramlatech.com
 - SSL/HTTPS enabled
