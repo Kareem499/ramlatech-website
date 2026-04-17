@@ -83,6 +83,12 @@
 .location-strip .tagline span { color: var(--gold); }
 @media(max-width:900px) { .booking-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
 @media(max-width:640px) { .form-row, .services-checkboxes { grid-template-columns: 1fr; } }
+.clients-carousel { background: #0E1F38; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 0; overflow: hidden; }
+.clients-track { display: flex; gap: 1rem; animation: logoScroll 40s linear infinite; width: max-content; }
+.client-card { width: 160px; height: 80px; background: #fff; border-radius: 12px; padding: 1rem; flex-shrink: 0; opacity: 0.85; transition: opacity 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; }
+.client-card:hover { opacity: 1; transform: translateY(-2px); }
+.client-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
+@keyframes logoScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXS97MYKLJ"></script>
@@ -116,6 +122,41 @@
     <p class="anim-up anim-up-d2">Whether you have a fully-formed brief or just an idea — we'd love to hear from you. Book a free consultation or send us a message.</p>
   </div>
 </section>
+<!-- Client Logo Carousel -->
+<div class="clients-carousel">
+  <div class="clients-track">
+    <div class="client-card"><img src="assets/clients/1%20Paltel.svg" alt="Paltel"></div>
+    <div class="client-card"><img src="assets/clients/2%20Jawwal.svg" alt="Jawwal"></div>
+    <div class="client-card"><img src="assets/clients/3%20Reach.svg" alt="Reach"></div>
+    <div class="client-card"><img src="assets/clients/4%20Palestinian%20Authority.svg" alt="Palestinian Authority"></div>
+    <div class="client-card"><img src="assets/clients/5%20PCBS.svg" alt="PCBS"></div>
+    <div class="client-card"><img src="assets/clients/6%20MTIT%20.svg" alt="MTIT"></div>
+    <div class="client-card"><img src="assets/clients/7%20PMA.svg" alt="PMA"></div>
+    <div class="client-card"><img src="assets/clients/8%20World%20Bank.svg" alt="World Bank"></div>
+    <div class="client-card"><img src="assets/clients/9%20Bank%20of%20Palestine.svg" alt="Bank of Palestine"></div>
+    <div class="client-card"><img src="assets/clients/10%20Fine%20HH.svg" alt="Fine HH"></div>
+    <div class="client-card"><img src="assets/clients/11%20NFPC.svg" alt="NFPC"></div>
+    <div class="client-card"><img src="assets/clients/12%20AlQuds%20Pharma.svg" alt="AlQuds Pharma"></div>
+    <div class="client-card"><img src="assets/clients/13%20GIZ.svg" alt="GIZ"></div>
+    <div class="client-card"><img src="assets/clients/14%20Munib%20%26%20Angela%20Masri%20Logo.svg" alt="Munib &amp; Angela Masri"></div>
+    <div class="client-card"><img src="assets/clients/15%20Upliftt.svg" alt="Upliftt"></div>
+    <div class="client-card"><img src="assets/clients/1%20Paltel.svg" alt="Paltel"></div>
+    <div class="client-card"><img src="assets/clients/2%20Jawwal.svg" alt="Jawwal"></div>
+    <div class="client-card"><img src="assets/clients/3%20Reach.svg" alt="Reach"></div>
+    <div class="client-card"><img src="assets/clients/4%20Palestinian%20Authority.svg" alt="Palestinian Authority"></div>
+    <div class="client-card"><img src="assets/clients/5%20PCBS.svg" alt="PCBS"></div>
+    <div class="client-card"><img src="assets/clients/6%20MTIT%20.svg" alt="MTIT"></div>
+    <div class="client-card"><img src="assets/clients/7%20PMA.svg" alt="PMA"></div>
+    <div class="client-card"><img src="assets/clients/8%20World%20Bank.svg" alt="World Bank"></div>
+    <div class="client-card"><img src="assets/clients/9%20Bank%20of%20Palestine.svg" alt="Bank of Palestine"></div>
+    <div class="client-card"><img src="assets/clients/10%20Fine%20HH.svg" alt="Fine HH"></div>
+    <div class="client-card"><img src="assets/clients/11%20NFPC.svg" alt="NFPC"></div>
+    <div class="client-card"><img src="assets/clients/12%20AlQuds%20Pharma.svg" alt="AlQuds Pharma"></div>
+    <div class="client-card"><img src="assets/clients/13%20GIZ.svg" alt="GIZ"></div>
+    <div class="client-card"><img src="assets/clients/14%20Munib%20%26%20Angela%20Masri%20Logo.svg" alt="Munib &amp; Angela Masri"></div>
+    <div class="client-card"><img src="assets/clients/15%20Upliftt.svg" alt="Upliftt"></div>
+  </div>
+</div>
 <section class="section-pad-lg" style="background:var(--pearl);" id="book">
   <div class="container">
     <div class="booking-layout">
