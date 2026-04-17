@@ -324,6 +324,7 @@ Source: `ACT+ Customer Logos Updated/Large/` folder on Desktop. Each SVG was pos
 - `viewBox` tightened to clip-path bounds (or image-transform bounds where no clip-path existed)
 - White slide-background `<rect>` elements removed
 - `width`/`height` set to `100%` for fluid scaling
+- Embedded bitmap (PNG/JPEG) extracted, background color auto-detected from corners (black or white), content bounding box cropped with 3% margin, re-embedded — removes internal bitmap whitespace so logos fill cards
 
 ---
 
