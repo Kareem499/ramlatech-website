@@ -309,8 +309,8 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 | Background | `#0E1F38` (dark navy) |
 | Border | `1px solid rgba(255,255,255,0.06)` top and bottom |
 | Padding | `1.5rem 0` |
-| Card size | `160×80px` |
-| Card style | White `#fff`, `border-radius: 12px`, `padding: 1rem` |
+| Card size | `220×110px` |
+| Card style | White `#fff`, `border-radius: 12px`, `padding: 0.75rem` |
 | Card opacity | `0.85` default, `1.0` on hover |
 | Hover effect | `opacity: 1` + `translateY(-2px)` |
 | Animation | `logoScroll` — CSS `@keyframes`, 40s linear infinite |
@@ -319,6 +319,11 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 
 ### Assets
 All SVGs stored in `assets/clients/` — 15 files (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT, PMA, World Bank, Bank of Palestine, Fine HH, NFPC, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt).
+
+Source: `ACT+ Customer Logos Updated/Large/` folder on Desktop. Each SVG was post-processed:
+- `viewBox` tightened to clip-path bounds (or image-transform bounds where no clip-path existed)
+- White slide-background `<rect>` elements removed
+- `width`/`height` set to `100%` for fluid scaling
 
 ---
 
