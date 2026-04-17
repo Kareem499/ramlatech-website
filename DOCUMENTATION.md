@@ -318,6 +318,16 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 | Images | `<img>` tags, `width/height: 100%`, `object-fit: contain` |
 | Per-logo scale | `--logo-scale` CSS variable on each `.client-card` div, default `1`. To shrink a specific logo: `<div class="client-card" style="--logo-scale: 0.7">` |
 
+### Current logo scale overrides
+| Logo | Scale | % change |
+|------|-------|----------|
+| Reach | 0.7 | −30% |
+| Palestine Monetary Authority | 0.6 | −40% |
+| Upliftt | 0.5 | −50% |
+| PCBS | 0.85 | −15% |
+| Fine Hygienic Holding | 0.65 | −35% |
+| All others | 1.0 | default |
+
 ### Assets
 All SVGs stored in `assets/clients/` — 15 files (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT, PMA, World Bank, Bank of Palestine, Fine HH, NFPC, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt).
 
