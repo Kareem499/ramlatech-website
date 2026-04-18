@@ -85,24 +85,28 @@ ramlatech/
     ├── mark-white.png                        # Arch mark — heritage section, booking card
     ├── act-plus-logo.png                     # ACT Plus Digital Solutions logo (PNG, white bg)
     ├── assetsact-plus-logo-transparent.svg   # ACT Plus Digital Solutions logo (SVG, transparent) — used in footer & contact page
-    └── clients/            # Client logo SVGs — used in logo carousel
+    └── clients/            # Client logo files — used in logo carousel
         ├── 1 Paltel.svg
         ├── 2 Jawwal.svg
         ├── 3 Reach.svg
         ├── 4 Palestinian Authority.svg
         ├── 5 PCBS.svg
-        ├── 6 MTIT .svg
-        ├── 7 PMA.svg
+        ├── 6 Ministry of Telecommunications & Digital Economy.svg   # MTIT (old)
+        ├── MTIT New.avif                                            # MTIT (new) — both shown
+        ├── PMA Final .jpg                                           # Palestine Monetary Authority
         ├── 8 World Bank.svg
         ├── 9 Bank of Palestine.svg
         ├── 12 AlQuds Pharma.svg
         ├── 13 GIZ.svg
         ├── 14 Munib & Angela Masri Logo.svg
         ├── 15 Upliftt.svg
-        └── (+ others)
+        ├── Playgeko logo.svg                                        # Added Apr 2026
+        ├── Playsonic Logo.jpg                                       # Added Apr 2026
+        └── 16. BK Plus Europe.png                                   # Added Apr 2026
 ```
 
 > **Note:** Clients 10 (Fine Hygienic Holding) and 11 (NFPC) were removed from the carousel in April 2026 at client request. Their SVG files remain in the assets folder but are not referenced in any HTML.
+> **Note:** MTIT logo has two versions in the carousel (old SVG + new AVIF) — owner will decide which to remove later.
 
 ---
 
@@ -333,22 +337,26 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 | Card opacity | `0.85` default, `1.0` on hover |
 | Hover effect | `opacity: 1` + `translateY(-2px)` |
 | Animation | `logoScroll` — CSS `@keyframes`, 40s linear infinite |
-| Loop method | 15 logos duplicated (30 total) — translate -50% for seamless loop |
+| Loop method | 18 logos duplicated (36 total) — translate -50% for seamless loop |
 | Images | `<img>` tags, `width/height: 100%`, `object-fit: contain` |
-| Per-logo scale | `--logo-scale` CSS variable on each `.client-card` div, default `1`. To shrink a specific logo: `<div class="client-card" style="--logo-scale: 0.7">` |
+| Per-logo scale | Applied via inline `style="transform:scale(X);transform-origin:center"` on `<img>`, with `overflow:hidden` on parent card where scale > 1 |
 
-### Current logo scale overrides
-| Logo | Scale | % change |
-|------|-------|----------|
-| Reach | 0.7 | −30% |
-| Palestine Monetary Authority | 0.6 | −40% |
-| Upliftt | 0.5 | −50% |
-| PCBS | 0.85 | −15% |
-| Fine Hygienic Holding | 0.65 | −35% |
-| All others | 1.0 | default |
+### Current logo size overrides (Apr 2026)
+| Logo | Method | Notes |
+|------|--------|-------|
+| Jawwal | `scale(1.1)` CSS | 10% bigger |
+| MTIT New | `scale(1.47)` CSS | new AVIF version |
+| Playsonic | `scale(1.4)` CSS | |
+| BK Plus Europe | `scale(0.7)` CSS | 30% smaller |
+| PMA Final | `scale(1.27)` CSS | |
+| Reach | viewBox tightened | 1.7× zoom via viewBox |
+| Upliftt | viewBox tightened | 2× zoom via viewBox |
+| World Bank | viewBox tightened | 20% bigger via viewBox |
+| Playgeko | viewBox cropped to content | removes large empty canvas |
+| All others | default | no override |
 
 ### Assets
-All SVGs stored in `assets/clients/` — 15 files (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT, PMA, World Bank, Bank of Palestine, Fine HH, NFPC, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt).
+Logo files stored in `assets/clients/` — 18 active logos (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT ×2, PMA Final, World Bank, Bank of Palestine, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt, Playgeko, Playsonic, BK Plus Europe).
 
 Source: `ACT+ Customer Logos Updated/Large/` folder on Desktop. Each SVG was post-processed:
 - `viewBox` tightened to clip-path bounds (or image-transform bounds where no clip-path existed)
