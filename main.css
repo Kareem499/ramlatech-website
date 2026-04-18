@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cairo:wght@400;500;600;700&display=swap');
 
 :root {
   --navy:   #0E1F38;
@@ -115,3 +115,92 @@ footer { background: var(--navy); color: rgba(255,255,255,0.75); padding: 5rem 0
 .footer-nl-success { font-size: 12px; color: rgba(250,248,244,0.7); margin-top: 0.75rem; display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 @media (max-width: 768px) { .newsletter-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ─── Arabic / RTL ─────────────────────────────────────────────────────── */
+[lang="ar"] {
+  --font-display: 'Cairo', sans-serif;
+  --font-body:    'Cairo', sans-serif;
+}
+
+/* Lang toggle button */
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.lang-toggle:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Section-label decorative line — RTL flip */
+[dir="rtl"] .section-label::before { margin-right: 0; margin-left: 0.6rem; }
+
+/* Eyebrow decorative line — RTL flip */
+[dir="rtl"] .eyebrow::before { margin-right: 0; margin-left: 0.6rem; }
+
+/* Nav underline indicator */
+[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
+
+/* Mobile nav open — RTL */
+[dir="rtl"] .nav-links.open { align-items: flex-end; }
+
+/* Services alternating layout — in RTL the .reverse class re-flips */
+[dir="rtl"] .service-layout.reverse       { direction: ltr; }
+[dir="rtl"] .service-layout.reverse > *  { direction: rtl; }
+
+/* Ticker & carousel — keep LTR scroll direction in RTL */
+[dir="rtl"] .ticker-inner    { direction: ltr; }
+[dir="rtl"] .clients-carousel { direction: ltr; }
+[dir="rtl"] .clients-track   { direction: ltr; }
+
+/* Text-align helpers that were hardcoded LTR */
+[dir="rtl"] .footer-bottom { flex-direction: row-reverse; }
+[dir="rtl"] .footer-bottom { flex-direction: row; }
+
+/* Footer bottom in RTL */
+[dir="rtl"] .footer-bottom { justify-content: space-between; }
+
+/* Hero code block stays LTR (it's actual code) */
+[dir="rtl"] .hero-card-main,
+[dir="rtl"] .code-line,
+[dir="rtl"] .card-label,
+[dir="rtl"] .service-visual .label,
+[dir="rtl"] .sv-tags { direction: ltr; text-align: left; }
+
+/* Service visual stat numbers — keep LTR for readability */
+[dir="rtl"] .service-visual .main-stat,
+[dir="rtl"] .service-visual .sub-stat { direction: ltr; text-align: left; }
+
+/* Why quote stays LTR */
+[dir="rtl"] .why-mini-stat div[style*="font-mono"] { direction: ltr; text-align: left; }
+
+/* Name anatomy block */
+[dir="rtl"] .name-anatomy { direction: ltr; }
+
+/* Newsletter input row — keep input on right in RTL */
+[dir="rtl"] .newsletter-input-wrap { direction: rtl; }
+
+/* Footer nl form */
+[dir="rtl"] .footer-nl-form { direction: rtl; }
+
+/* Form checkbox labels */
+[dir="rtl"] .service-check { flex-direction: row-reverse; justify-content: flex-end; }
+
+/* FAQ arrow */
+[dir="rtl"] .faq-q { flex-direction: row-reverse; }
+
+/* Hero & page-hero h1 — Cairo needs more vertical breathing room */
+[lang="ar"] .hero h1,
+[lang="ar"] .page-hero h1 {
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+/* Button arrows — visual only, handled via translations */

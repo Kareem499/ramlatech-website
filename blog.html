@@ -9,6 +9,8 @@
 <meta name="author" content="Ramlatech" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://ramlatech.com/blog.html" />
+<link rel="alternate" hreflang="en" href="https://ramlatech.com/blog.html" />
+<link rel="alternate" hreflang="ar" href="https://ramlatech.com/blog.html?lang=ar" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -86,13 +88,14 @@
 <nav id="main-nav">
   <a href="index.html" class="nav-logo"><img src="assets/logo-nav.png" alt="Ramlatech boutique software agency logo" /></a>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-    <a href="contact.html#book" class="nav-cta">Book a Call</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="services.html" data-i18n="nav.services">Services</a>
+    <a href="blog.html" data-i18n="nav.blog">Blog</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <a href="contact.html#book" class="nav-cta" data-i18n="nav.book">Book a Call</a>
   </div>
+  <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">عر</button>
   <div class="nav-burger"><span></span><span></span><span></span></div>
 </nav>
 
@@ -101,26 +104,26 @@
   <div class="page-hero-bg"></div>
   <div class="page-hero-dots"></div>
   <div class="container" style="position:relative;z-index:1;">
-    <div class="eyebrow anim-up">Insights & Resources</div>
-    <h1 class="anim-up anim-up-d1">Technology insights from the<br/><span>heart of Palestine</span></h1>
-    <p class="anim-up anim-up-d2">Practical guides on software, AI, and building great products.</p>
+    <div class="eyebrow anim-up" data-i18n="blg.eyebrow">Insights & Resources</div>
+    <h1 class="anim-up anim-up-d1" data-i18n-html="blg.h1">Technology insights from the<br/><span>heart of Palestine</span></h1>
+    <p class="anim-up anim-up-d2" data-i18n="blg.p">Practical guides on software, AI, and building great products.</p>
   </div>
 </section>
 
 <!-- Featured Post -->
 <section class="section-pad" style="background:var(--pearl);">
   <div class="container">
-    <div class="section-label" style="margin-bottom:2rem;">Featured Article</div>
+    <div class="section-label" style="margin-bottom:2rem;" data-i18n="blg.feat.lbl">Featured Article</div>
     <div class="featured-card reveal">
       <div class="featured-thumb">
         <img src="assets/mark-white.png" alt="Ramlatech software agency mark" />
       </div>
       <div class="featured-body">
-        <span class="blog-tag teal">Startups</span>
-        <h2>What is an MVP? How to Build One and Get to Market Fast</h2>
-        <p>Every great product started as an idea — but how do you get from idea to market without wasting months and money? This is the founder's guide to the MVP.</p>
-        <div class="blog-meta">Apr 14, 2026 · 8 min read</div>
-        <a href="#" class="blog-link">Read article →</a>
+        <span class="blog-tag teal" data-i18n="blg.feat.tag">Startups</span>
+        <h2 data-i18n="blg.feat.h2">What is an MVP? How to Build One and Get to Market Fast</h2>
+        <p data-i18n="blg.feat.p">Every great product started as an idea — but how do you get from idea to market without wasting months and money? This is the founder's guide to the MVP.</p>
+        <div class="blog-meta" data-i18n="blg.feat.meta">Apr 14, 2026 · 8 min read</div>
+        <a href="#" class="blog-link" data-i18n="blg.feat.lnk">Read article →</a>
       </div>
     </div>
   </div>
@@ -129,7 +132,7 @@
 <!-- Post Grid -->
 <section class="section-pad" style="background:var(--white);">
   <div class="container">
-    <div class="section-label" style="margin-bottom:2rem;">More Articles</div>
+    <div class="section-label" style="margin-bottom:2rem;" data-i18n="blg.more.lbl">More Articles</div>
     <div class="post-grid">
 
       <div class="post-card reveal reveal-d1">
@@ -137,9 +140,9 @@
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="post-body">
-          <span class="blog-tag teal">Agencies</span>
-          <h3>How to choose a software agency — 10 questions to ask before you sign</h3>
-          <div class="coming-soon-badge">Coming Soon</div>
+          <span class="blog-tag teal" data-i18n="blg.p1.tag">Agencies</span>
+          <h3 data-i18n="blg.p1.h3">How to choose a software agency — 10 questions to ask before you sign</h3>
+          <div class="coming-soon-badge" data-i18n="blg.p1.cs">Coming Soon</div>
         </div>
       </div>
 
@@ -148,9 +151,9 @@
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
         <div class="post-body">
-          <span class="blog-tag gold">AI</span>
-          <h3>AI automation for SMEs — where to start and what to expect</h3>
-          <div class="coming-soon-badge">Coming Soon</div>
+          <span class="blog-tag gold" data-i18n="blg.p2.tag">AI</span>
+          <h3 data-i18n="blg.p2.h3">AI automation for SMEs — where to start and what to expect</h3>
+          <div class="coming-soon-badge" data-i18n="blg.p2.cs">Coming Soon</div>
         </div>
       </div>
 
@@ -159,9 +162,9 @@
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <div class="post-body">
-          <span class="blog-tag navy">Budgeting</span>
-          <h3>How much does custom software development cost in 2026?</h3>
-          <div class="coming-soon-badge">Coming Soon</div>
+          <span class="blog-tag navy" data-i18n="blg.p3.tag">Budgeting</span>
+          <h3 data-i18n="blg.p3.h3">How much does custom software development cost in 2026?</h3>
+          <div class="coming-soon-badge" data-i18n="blg.p3.cs">Coming Soon</div>
         </div>
       </div>
 
@@ -174,9 +177,9 @@
   <div class="container">
     <div class="newsletter-grid">
       <div class="newsletter-left">
-        <div class="newsletter-eyebrow">STAY ROOTED</div>
-        <h2 class="newsletter-h2">Insights from <span>Ramla</span> to your inbox</h2>
-        <p class="newsletter-p">One thoughtful email a month on digital transformation, AI, and software built with purpose. No noise, no fluff.</p>
+        <div class="newsletter-eyebrow" data-i18n="nl.eyebrow">STAY ROOTED</div>
+        <h2 class="newsletter-h2" data-i18n-html="nl.h2">Insights from <span>Ramla</span> to your inbox</h2>
+        <p class="newsletter-p" data-i18n="nl.p">One thoughtful email a month on digital transformation, AI, and software built with purpose. No noise, no fluff.</p>
       </div>
       <div class="newsletter-right">
         <form class="newsletter-form" data-newsletter="band" action="https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe" method="POST">
@@ -184,12 +187,12 @@
           <input type="hidden" name="anticsrf" value="true">
           <label class="sr-only" for="nl-band-email-blog">Email</label>
           <div class="newsletter-input-wrap">
-            <input type="email" id="nl-band-email-blog" name="fields[email]" required placeholder="you@company.com" aria-label="Email" class="newsletter-input" autocomplete="email">
-            <button type="submit" class="newsletter-btn">Subscribe</button>
+            <input type="email" id="nl-band-email-blog" name="fields[email]" required placeholder="you@company.com" aria-label="Email" class="newsletter-input" autocomplete="email" data-i18n-ph="footer.nl_ph">
+            <button type="submit" class="newsletter-btn" data-i18n="nl.btn">Subscribe</button>
           </div>
-          <p class="newsletter-helper">Confirm via email. Unsubscribe anytime.</p>
+          <p class="newsletter-helper" data-i18n="nl.helper">Confirm via email. Unsubscribe anytime.</p>
         </form>
-        <div class="newsletter-success">Thanks — check your inbox to confirm.</div>
+        <div class="newsletter-success" data-i18n="nl.success">Thanks — check your inbox to confirm.</div>
       </div>
     </div>
   </div>
@@ -201,15 +204,15 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logo-nav.png" alt="Ramlatech boutique software agency logo" style="height:64px;" />
-        <p>Rooted in Heritage. Driven by Innovation. A software agency built from Ramla, Palestine — delivering transformative technology to the world.</p>
+        <p data-i18n="footer.tagline">Rooted in Heritage. Driven by Innovation. A software agency built from Ramla, Palestine — delivering transformative technology to the world.</p>
         <form class="footer-nl-form" data-newsletter="footer" action="https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe" method="POST">
           <input type="hidden" name="ml-submit" value="1">
           <input type="hidden" name="anticsrf" value="true">
           <label class="sr-only" for="nl-footer-email-blog">Email</label>
-          <input type="email" id="nl-footer-email-blog" name="fields[email]" required placeholder="Newsletter email" aria-label="Email" class="footer-nl-input" autocomplete="email">
+          <input type="email" id="nl-footer-email-blog" name="fields[email]" required placeholder="Newsletter email" aria-label="Email" class="footer-nl-input" autocomplete="email" data-i18n-ph="footer.nl_ph">
           <button type="submit" class="footer-nl-btn">→</button>
         </form>
-        <div class="footer-nl-success">Thanks — check your inbox to confirm.</div>
+        <div class="footer-nl-success" data-i18n="nl.success">Thanks — check your inbox to confirm.</div>
         <div class="footer-social" style="margin-top:1.25rem;">
   <a href="https://www.linkedin.com/company/ramlatech" target="_blank" title="LinkedIn">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -222,17 +225,18 @@
   </a>
 </div>
       </div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#values">Our Values</a><a href="about.html#story">Our Story</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Services</h4><a href="services.html#mobile">Mobile Dev</a><a href="services.html#web">Web Dev</a><a href="services.html#ai">AI & Automation</a><a href="services.html#security">Cybersecurity</a><a href="services.html">All Services</a></div>
-      <div class="footer-col"><h4>Get Started</h4><a href="contact.html#book">Book a Consultation</a><a href="contact.html#rfp">Submit an RFP</a><a href="contact.html">Contact Us</a><a href="mailto:hello@ramlatech.com">hello@ramlatech.com</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.company">Company</h4><a href="about.html" data-i18n="footer.about_us">About Us</a><a href="about.html#values" data-i18n="footer.our_values">Our Values</a><a href="about.html#story" data-i18n="footer.our_story">Our Story</a><a href="contact.html" data-i18n="footer.f_contact">Contact</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.services">Services</h4><a href="services.html#mobile" data-i18n="footer.mobile_dev">Mobile Dev</a><a href="services.html#web" data-i18n="footer.web_dev">Web Dev</a><a href="services.html#ai" data-i18n="footer.ai">AI & Automation</a><a href="services.html#security" data-i18n="footer.security">Cybersecurity</a><a href="services.html" data-i18n="footer.all_svcs">All Services</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.get_started">Get Started</h4><a href="contact.html#book" data-i18n="footer.book_cons">Book a Consultation</a><a href="contact.html#rfp" data-i18n="footer.submit_rfp">Submit an RFP</a><a href="contact.html" data-i18n="footer.contact_us">Contact Us</a><a href="mailto:hello@ramlatech.com">hello@ramlatech.com</a></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Ramlatech. All rights reserved.</span>
-      <span style="font-family:var(--font-mono);font-size:0.8rem;color:rgba(255,255,255,0.3);">ramlatech.com · Software Agency · Est. Palestine</span>
+      <span data-i18n="footer.copyright">© 2026 Ramlatech. All rights reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.8rem;color:rgba(255,255,255,0.3);" data-i18n="footer.mono">ramlatech.com · Software Agency · Est. Palestine</span>
     </div>
   </div>
 </footer>
 <script src="main.js"></script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+<script src="lang.js"></script>
 </body>
 </html>
