@@ -1,5 +1,5 @@
 # Ramlatech Website — Complete Technical Documentation
-> Version 2.0 · Last updated: April 14, 2026
+> Version 2.1 · Last updated: April 19, 2026
 > Maintained by: Kareem AlWazir (kareem@ramlatech.com)
 
 ---
@@ -79,11 +79,13 @@ ramlatech/
 ├── CNAME               # Custom domain file — contains: ramlatech.com
 ├── DOCUMENTATION.md    # This file
 └── assets/
-    ├── logo-nav.png        # Full logo — white text on navy — navbar
-    ├── logo-white.png      # Full logo — white version — footer
-    ├── mark-navy.png       # Arch mark — favicon
-    ├── mark-white.png      # Arch mark — heritage section, booking card
-    └── clients/            # Client logo SVGs (15 files) — used in logo carousel
+    ├── logo-nav.png                          # Full logo — white text on navy — navbar
+    ├── logo-white.png                        # Full logo — white version — footer
+    ├── mark-navy.png                         # Arch mark — favicon
+    ├── mark-white.png                        # Arch mark — heritage section, booking card
+    ├── act-plus-logo.png                     # ACT Plus Digital Solutions logo (PNG, white bg)
+    ├── assetsact-plus-logo-transparent.svg   # ACT Plus Digital Solutions logo (SVG, transparent) — used in footer & contact page
+    └── clients/            # Client logo SVGs — used in logo carousel
         ├── 1 Paltel.svg
         ├── 2 Jawwal.svg
         ├── 3 Reach.svg
@@ -93,13 +95,14 @@ ramlatech/
         ├── 7 PMA.svg
         ├── 8 World Bank.svg
         ├── 9 Bank of Palestine.svg
-        ├── 10 Fine HH.svg
-        ├── 11 NFPC.svg
         ├── 12 AlQuds Pharma.svg
         ├── 13 GIZ.svg
         ├── 14 Munib & Angela Masri Logo.svg
-        └── 15 Upliftt.svg
+        ├── 15 Upliftt.svg
+        └── (+ others)
 ```
+
+> **Note:** Clients 10 (Fine Hygienic Holding) and 11 (NFPC) were removed from the carousel in April 2026 at client request. Their SVG files remain in the assets folder but are not referenced in any HTML.
 
 ---
 
@@ -141,7 +144,23 @@ ramlatech/
 
 ---
 
-## 6. Forms — Formspree
+## 6. Changelog
+
+### v2.1 — April 19, 2026
+- **ACT Plus Digital Solutions branding** added across all pages:
+  - Footer: ACT Plus logo (`assetsact-plus-logo-transparent.svg`) + "A specialized division of ACT Plus Digital Solutions" — appears on all 5 pages
+  - Contact page: inline trust strip below the "We work across" section with logo, company name, and division description
+  - CSS classes: `.act-plus-bar`, `.act-plus-logo-img`, `.act-plus-text`, `.act-trust-inline`, `.act-trust-inline-*`
+- **Schema markup**: `parentOrganization: ACT Plus Digital Solutions` added to JSON-LD on index.html and contact.html
+- **Client carousel**: Removed Fine Hygienic Holding (10) and NFPC (11) from all carousels (index, contact, services)
+- **Contact page country tags**: Updated to Palestine, Jordan, UAE, KSA, USA, Canada, +9 more
+- **Language toggle**: Button label changed from "عر" to "العربية" across all pages
+- **Arabic translations**: Added `con.act_trust` and `con.act_part_of` keys to lang.js
+- **New assets**: `act-plus-logo.png` and `assetsact-plus-logo-transparent.svg` added to assets/
+
+---
+
+## 7. Forms — Formspree
 
 | Item | Details |
 |------|---------|
