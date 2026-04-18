@@ -361,6 +361,8 @@
     'con.det2':      'الرملة، فلسطين — نخدم عملاء حول العالم',
     'con.det3':      'رد خلال يوم عمل واحد (مضمون)',
     'con.works':     'نعمل في',
+    'con.act_part_of': 'جزء من',
+    'con.act_trust': 'رمله تك وحدة متخصصة ضمن ACT Plus للحلول الرقمية، تركّز على الشركات الصغيرة والمتوسطة — وتقدّم حلولًا عملية تُحسّن الأداء وتُسرّع النمو.',
 
     'con.frm.h3':    'أخبرنا عن مشروعك',
     'con.frm.sub':   'سنرد عليك خلال يوم عمل واحد.',
@@ -531,7 +533,7 @@
 
     /* — toggle button label — */
     const btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = isAr ? 'EN' : 'عر';
+    if (btn) btn.textContent = isAr ? 'EN' : 'العربية';
 
     /* — persist — */
     localStorage.setItem('ramlatech_lang', lang);
