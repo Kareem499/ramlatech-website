@@ -1,5 +1,5 @@
 # Ramlatech Website — Complete Technical Documentation
-> Version 2.1 · Last updated: April 19, 2026
+> Version 2.2 · Last updated: April 19, 2026
 > Maintained by: Kareem AlWazir (kareem@ramlatech.com)
 
 ---
@@ -149,6 +149,15 @@ ramlatech/
 ---
 
 ## 6. Changelog
+
+### v2.2 — April 19, 2026
+**SEO & Performance Checkup — 5 issues resolved**
+
+- **Render-blocking resources:** Added `defer` to `main.js`, `lang.js`, and Mailerlite `webforms.min.js` on all pages. Added `rel="preload"` hint for `main.css`.
+- **Responsive images:** Resized oversized raster images to 2× display size (`logo-nav.png` 1997px→499px, `mark-white.png` 512px→128px, `Playsonic Logo.jpg` 8000px→640px −97%, `PMA Final .jpg` 1600px→640px −91%). Added `width`, `height`, and `loading="lazy"` to all raster `<img>` tags. Added `width: auto` to inline styles where CSS sets height-only to prevent squishing.
+- **Page speed:** Moved Google Fonts from CSS `@import` (serial/blocking) to parallel `<link>` tags with `preconnect` hints in `<head>` on all pages. Added `dns-prefetch` for GTM and Mailerlite. Minified `main.css` (−21%), `main.js` (−22%), `lang.js` (−13%).
+- **HSTS:** Set up Cloudflare as DNS/CDN proxy. Enabled HSTS (max-age 12 months, includeSubDomains, preload) and No-Sniff header via Cloudflare Edge Certificates. Config files also created: `_headers` (Netlify) and `vercel.json` (Vercel) as fallbacks.
+- **Unsafe cross-origin links:** Added `rel="noopener noreferrer"` to all 14 `target="_blank"` links across all pages (LinkedIn, X, Instagram, Google Calendar booking button). See Developer Guidelines §16 for the rule and the affiliate link exception.
 
 ### v2.1 — April 19, 2026
 - **ACT Plus Digital Solutions branding** added across all pages:
@@ -420,22 +429,65 @@ Source: `ACT+ Customer Logos Updated/Large/` folder on Desktop. Each SVG was pos
 | Item | Details |
 |------|---------|
 | Domain | ramlatech.com |
+| Registrar | GoDaddy |
+| DNS & CDN | Cloudflare (free plan) |
+| Cloudflare account | hello@ramlatech.com |
+| Cloudflare dashboard | https://dash.cloudflare.com |
 | Connected to | GitHub Pages |
-| HTTPS | Enforced |
+| HTTPS | Enforced via Cloudflare (Full mode) |
+| HSTS | Enabled — max-age 12 months, includeSubDomains, preload |
 | CNAME file | Contains: ramlatech.com |
 
-### DNS Records
-| Type | Name | Value |
-|------|------|-------|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | kareem499.github.io |
+### DNS Records (managed in Cloudflare)
+| Type | Name | Value | Proxy |
+|------|------|-------|-------|
+| A | @ | 185.199.108.153 | Proxied |
+| A | @ | 185.199.109.153 | Proxied |
+| A | @ | 185.199.110.153 | Proxied |
+| A | @ | 185.199.111.153 | Proxied |
+| CNAME | www | kareem499.github.io | Proxied |
+| CNAME | litesrv._domainkey | litesrv._domainkey.mlsend.com | DNS only |
+| CNAME | _domainconnect | _domainconnect.gd.domaincontrol.com | DNS only |
+| MX | @ | aspmx.l.google.com (priority 1) | DNS only |
+| MX | @ | alt1–alt4.aspmx.l.google.com | DNS only |
+| TXT | _dmarc | DMARC policy | DNS only |
+| TXT | google._domainkey | Google DKIM key | DNS only |
+| TXT | @ | SPF, Mailerlite verification, Google site verification | DNS only |
+
+> **Important:** MX, DKIM, DMARC, and SPF records must always stay **DNS only** — proxying them breaks email delivery.
 
 ---
 
-## 16. Content Marketing Roadmap
+## 16. Developer Guidelines
+
+### External Links Rule
+All links that open in a new tab (`target="_blank"`) **must** include `rel="noopener noreferrer"`:
+
+```html
+<!-- Correct — social media, external tools, third-party sites -->
+<a href="https://linkedin.com/..." target="_blank" rel="noopener noreferrer">
+
+<!-- Exception — affiliate or referral partner links only -->
+<a href="https://partner.com/..." target="_blank" rel="noopener">
+```
+
+**Why `noopener`:** Without it, the new tab can access and control the original tab via `window.opener` — a real attack vector called tab hijacking.
+
+**Why `noreferrer`:** Hides the fact that the visitor came from ramlatech.com. Fine for social media links. **Do not use on affiliate or referral partner links** — it breaks referral tracking and commission attribution. Use `noopener` only on those.
+
+---
+
+### Performance Rules
+- All `<script>` tags at end of `<body>` must have `defer` attribute
+- Google Fonts must be loaded via `<link>` in `<head>` with `preconnect` hints — never via CSS `@import`
+- All raster images must have `width` and `height` attributes matching their intrinsic pixel dimensions
+- Images displayed via CSS height-only (e.g. `style="height:64px;"`) must also include `width: auto` in the style to prevent squishing
+- Below-the-fold images must have `loading="lazy"`
+- Above-the-fold images (nav logo) must NOT have `loading="lazy"`
+
+---
+
+## 18. Content Marketing Roadmap
 
 ### Blog Posts Planned
 | # | Title | Target Keyword | Audience | CTA |
@@ -457,7 +509,7 @@ Blog post (SEO)
 
 ---
 
-## 17. AI Search Optimization Roadmap
+## 19. AI Search Optimization Roadmap
 
 To appear in ChatGPT, Perplexity, Claude, and other AI searches:
 
@@ -471,7 +523,7 @@ To appear in ChatGPT, Perplexity, Claude, and other AI searches:
 
 ---
 
-## 18. Pending Tasks
+## 20. Pending Tasks
 
 ### High Priority
 - [x] Embed MailerLite newsletter form — live on all pages (band + footer)
@@ -499,7 +551,7 @@ To appear in ChatGPT, Perplexity, Claude, and other AI searches:
 
 ---
 
-## 19. Key Decisions
+## 21. Key Decisions
 
 | Decision | Reason |
 |----------|--------|
@@ -512,7 +564,7 @@ To appear in ChatGPT, Perplexity, Claude, and other AI searches:
 
 ---
 
-## 20. Contacts
+## 22. Contacts
 
 | Role | Name | Email |
 |------|------|-------|
