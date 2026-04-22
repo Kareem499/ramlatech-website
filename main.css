@@ -435,3 +435,204 @@
 /* ACT Plus — hidden until further notice */
 .act-plus-bar { display: none; }
 .act-trust-inline { display: none; }
+
+/* ============================================================
+   MANIFESTO V2 — brand texture, ticker, sections, ghost nums
+   ============================================================ */
+
+/* Override: body background handled by sections now */
+.manifesto-page .mf-body { background: transparent !important; }
+
+/* ── Hero dots ── */
+.manifesto-page .mf-hero-dots {
+  position: absolute;
+  top: 90px;
+  right: 4%;
+  width: 300px;
+  height: 300px;
+  background-image: radial-gradient(circle, rgba(196,136,43,0.28) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Eyebrow badge (override plain eyebrow) ── */
+.manifesto-page .mf-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(196,136,43,0.12);
+  border: 1px solid rgba(196,136,43,0.28);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 100px;
+  margin-bottom: 1.75rem;
+}
+.manifesto-page .mf-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: mfPulse 2s infinite;
+}
+.manifesto-page .mf-eyebrow-sep { opacity: 0.45; }
+@keyframes mfPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── Ticker ── */
+.manifesto-page .mf-ticker {
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 0.85rem 0;
+  overflow: hidden;
+}
+.manifesto-page .mf-ticker-inner {
+  display: flex;
+  gap: 3rem;
+  animation: mfMarquee 35s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+@keyframes mfMarquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.manifesto-page .mf-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.manifesto-page .mf-ticker-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Section wrappers ── */
+.manifesto-page .mf-section { position: relative; overflow: hidden; }
+.manifesto-page .mf-bg-pearl { background: var(--pearl); }
+.manifesto-page .mf-bg-white { background: var(--white); }
+.manifesto-page .mf-bg-dark  { background: var(--navy); }
+
+/* Dot texture overlay */
+.manifesto-page .mf-section-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(196,136,43,0.18) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.manifesto-page .mf-section-dots-light {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 1.5px);
+  opacity: 0.25;
+}
+
+/* Dark section glow */
+.manifesto-page .mf-dark-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(196,136,43,0.1) 0%, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(11,138,138,0.07) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* ── Ghost chapter numbers ── */
+.manifesto-page .mf-chapter { position: relative; }
+.manifesto-page .mf-ghost-num {
+  position: absolute;
+  top: 2.5rem;
+  right: -0.05em;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 16vw, 13rem);
+  font-weight: 700;
+  color: var(--navy);
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+}
+.manifesto-page .mf-ghost-num-light {
+  color: var(--gold);
+  opacity: 0.07;
+}
+.manifesto-page .mf-chapter > *:not(.mf-ghost-num) { position: relative; z-index: 1; }
+
+/* ── Chapter divider ── */
+.manifesto-page .mf-chapter-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196,136,43,0.25), transparent);
+  margin: 1rem 0;
+}
+
+/* ── Dark section text overrides ── */
+.manifesto-page .mf-title-light { color: var(--white) !important; }
+.manifesto-page .mf-prose-light { color: rgba(250,248,244,0.75) !important; }
+.manifesto-page .mf-prose-light strong { color: var(--white) !important; }
+.manifesto-page .mf-prose-light em { color: rgba(250,248,244,0.9) !important; }
+
+/* Rebellion card glass variant (for dark section) */
+.manifesto-page .mf-rebellion-glass {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(196,136,43,0.45) !important;
+  backdrop-filter: blur(12px);
+}
+.manifesto-page .mf-rebellion-glass .mf-rebellion-body strong { color: var(--gold) !important; }
+.manifesto-page .mf-rebellion-glass .mf-rebellion-body p { color: rgba(250,248,244,0.8) !important; }
+
+/* ── Drop cap ── */
+.manifesto-page .mf-dropcap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 5.25rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 0.82;
+  margin-right: 0.1em;
+  margin-top: 0.08em;
+  margin-bottom: -0.05em;
+}
+
+/* ── Section first chapter padding fix ── */
+.manifesto-page .mf-section .mf-chapter:first-child { padding-top: 7rem; }
+.manifesto-page .mf-section .mf-chapter:last-child  { padding-bottom: 7rem; }
+
+/* ── Closing bg glow ── */
+.manifesto-page .mf-closing { position: relative; }
+.manifesto-page .mf-closing-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(196,136,43,0.1) 0%, transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(11,138,138,0.07) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* ── ACT Plus — hidden (all variants) ── */
+.act-plus-bar,
+.act-trust-inline,
+.act-trust-v3,
+.act-trust-v4,
+.act-trust-v5 { display: none !important; }
+
+/* Responsive additions */
+@media (max-width: 640px) {
+  .manifesto-page .mf-hero-dots { display: none; }
+  .manifesto-page .mf-ghost-num { opacity: 0.025; font-size: clamp(4rem, 14vw, 7rem); }
+  .manifesto-page .mf-section .mf-chapter:first-child { padding-top: 4.5rem; }
+  .manifesto-page .mf-section .mf-chapter:last-child  { padding-bottom: 4.5rem; }
+}
