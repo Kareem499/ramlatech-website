@@ -17,7 +17,9 @@
 <meta property="og:url" content="https://ramlatech.com/blog.html" />
 <meta property="og:title" content="Blog — Technology Insights from Ramlatech" />
 <meta property="og:description" content="Practical guides on software development, AI automation, and building great products — from the team at Ramlatech." />
-<meta property="og:image" content="https://ramlatech.com/assets/logo-navy.png" />
+<meta property="og:image" content="https://ramlatech.com/assets/og-card.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="Ramlatech" />
 <meta property="og:locale" content="en_US" />
 
@@ -26,7 +28,7 @@
 <meta name="twitter:site" content="@ramlatech" />
 <meta name="twitter:title" content="Blog — Technology Insights from Ramlatech" />
 <meta name="twitter:description" content="Practical guides on software, AI, and building great products from the team at Ramlatech." />
-<meta name="twitter:image" content="https://ramlatech.com/assets/logo-navy.png" />
+<meta name="twitter:image" content="https://ramlatech.com/assets/og-card.jpg" />
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXS97MYKLJ"></script>
@@ -105,6 +107,31 @@
 @media (max-width: 900px) { .featured-card { grid-template-columns: 1fr; } .featured-thumb { min-height: 200px; } .post-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .post-grid { grid-template-columns: 1fr; } }
 </style>
+<!-- Additional structured data: breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ramlatech.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://ramlatech.com/blog.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav id="main-nav">

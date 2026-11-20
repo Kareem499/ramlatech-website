@@ -17,7 +17,9 @@
 <meta property="og:url" content="https://ramlatech.com/contact.html" />
 <meta property="og:title" content="Contact Ramlatech — Book a Consultation or Submit an RFP" />
 <meta property="og:description" content="Get in touch with Ramlatech. Book a free consultation, send us a message, or submit a formal RFP for your next software project." />
-<meta property="og:image" content="https://ramlatech.com/assets/logo-navy.png" />
+<meta property="og:image" content="https://ramlatech.com/assets/og-card.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="Ramlatech" />
 <meta property="og:locale" content="en_US" />
 
@@ -26,7 +28,7 @@
 <meta name="twitter:site" content="@ramlatech" />
 <meta name="twitter:title" content="Contact Ramlatech" />
 <meta name="twitter:description" content="Book a free consultation or submit an RFP for your next software project." />
-<meta name="twitter:image" content="https://ramlatech.com/assets/logo-navy.png" />
+<meta name="twitter:image" content="https://ramlatech.com/assets/og-card.jpg" />
 <link rel="icon" type="image/png" href="assets/mark-navy.png" />
 <script type="application/ld+json">
 {
@@ -71,6 +73,8 @@
 .calendar-embed-header img { height: 28px; width: auto; }
 .calendar-embed-header span { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.85); }
 .calendar-embed-wrap iframe { width: 100%; border: none; display: block; }
+.booking-layout > *, .contact-layout > * { min-width: 0; }
+.calendar-embed-wrap .btn { white-space: normal; text-align: center; }
 .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
 .contact-info h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 1rem; }
 .contact-info h2 span { color: var(--teal); }
@@ -120,6 +124,84 @@
 
   gtag('config', 'G-KXS97MYKLJ');
 </script>
+<!-- Additional structured data: breadcrumbs + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ramlatech.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://ramlatech.com/contact.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens after I book a consultation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You'll receive a confirmation with a calendar invite. The call is 30 minutes — we'll listen, ask questions, and give you an honest assessment of how we can help."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you start a project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For new projects, we typically start within 1–2 weeks of signing an agreement. For staff augmentation, we can often onboard team members within a week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with startups or only enterprises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. We work with seed-stage startups building their first product, scale-ups modernizing their stack, and enterprise organizations undergoing digital transformation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What time zones do you support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We have experience working across EMEA, APAC, and North American time zones. We've successfully delivered projects for clients in 15+ countries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer fixed-price or time & materials contracts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. For well-defined projects, we offer fixed-price engagements. For evolving projects, we work on a time & materials basis. We'll recommend the right model during the consultation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Ramlatech different?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Radical transparency, deep roots, and genuine care. We treat your challenges as our own. Our Palestinian heritage means we've built resilience, creativity, and a long-term view into everything we do."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav id="main-nav">
@@ -148,40 +230,42 @@
 <!-- Client Logo Carousel -->
 <div class="clients-carousel">
   <div class="clients-track">
-    <div class="client-card"><img src="assets/clients/1%20Paltel.svg" alt="Paltel"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/2%20Jawwal.svg" alt="Jawwal" style="transform:scale(1.1);transform-origin:center"></div>
-    <div class="client-card"><img src="assets/clients/3%20Reach.svg" alt="Reach"></div>
-    <div class="client-card"><img src="assets/clients/4%20Palestinian%20Authority.svg" alt="Palestinian Authority"></div>
-    <div class="client-card"><img src="assets/clients/5%20PCBS.svg" alt="PCBS"></div>
-    <div class="client-card"><img src="assets/clients/6%20Ministry%20of%20Telecommunications%20%26%20Digital%20Economy.svg" alt="MTIT"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/MTIT%20New.avif" alt="MTIT New" style="transform:scale(1.47);transform-origin:center" width="500" height="300" loading="lazy"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/PMA%20Final%20.jpg" alt="PMA" style="transform:scale(1.27);transform-origin:center" width="640" height="360" loading="lazy"></div>
-    <div class="client-card"><img src="assets/clients/8%20World%20Bank.svg" alt="World Bank"></div>
-    <div class="client-card"><img src="assets/clients/9%20Bank%20of%20Palestine.svg" alt="Bank of Palestine"></div>
-    <div class="client-card"><img src="assets/clients/12%20AlQuds%20Pharma.svg" alt="AlQuds Pharma"></div>
-    <div class="client-card"><img src="assets/clients/13%20GIZ.svg" alt="GIZ"></div>
-    <div class="client-card"><img src="assets/clients/14%20Munib%20%26%20Angela%20Masri%20Logo.svg" alt="Munib &amp; Angela Masri"></div>
-    <div class="client-card"><img src="assets/clients/15%20Upliftt.svg" alt="Upliftt"></div>
-    <div class="client-card"><img src="assets/clients/Playgeko%20logo.svg" alt="Playgeko"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/Playsonic%20Logo.jpg" alt="Playsonic" style="transform:scale(1.4);transform-origin:center" width="640" height="360" loading="lazy"></div>
-    <div class="client-card"><img src="assets/clients/16.%20BK%20Plus%20Europe.png" alt="BK Plus Europe" style="transform:scale(0.7);transform-origin:center" width="330" height="240" loading="lazy"></div>
-    <div class="client-card"><img src="assets/clients/1%20Paltel.svg" alt="Paltel"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/2%20Jawwal.svg" alt="Jawwal" style="transform:scale(1.1);transform-origin:center"></div>
-    <div class="client-card"><img src="assets/clients/3%20Reach.svg" alt="Reach"></div>
-    <div class="client-card"><img src="assets/clients/4%20Palestinian%20Authority.svg" alt="Palestinian Authority"></div>
-    <div class="client-card"><img src="assets/clients/5%20PCBS.svg" alt="PCBS"></div>
-    <div class="client-card"><img src="assets/clients/6%20Ministry%20of%20Telecommunications%20%26%20Digital%20Economy.svg" alt="MTIT"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/MTIT%20New.avif" alt="MTIT New" style="transform:scale(1.47);transform-origin:center" width="500" height="300" loading="lazy"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/PMA%20Final%20.jpg" alt="PMA" style="transform:scale(1.27);transform-origin:center" width="640" height="360" loading="lazy"></div>
-    <div class="client-card"><img src="assets/clients/8%20World%20Bank.svg" alt="World Bank"></div>
-    <div class="client-card"><img src="assets/clients/9%20Bank%20of%20Palestine.svg" alt="Bank of Palestine"></div>
-    <div class="client-card"><img src="assets/clients/12%20AlQuds%20Pharma.svg" alt="AlQuds Pharma"></div>
-    <div class="client-card"><img src="assets/clients/13%20GIZ.svg" alt="GIZ"></div>
-    <div class="client-card"><img src="assets/clients/14%20Munib%20%26%20Angela%20Masri%20Logo.svg" alt="Munib &amp; Angela Masri"></div>
-    <div class="client-card"><img src="assets/clients/15%20Upliftt.svg" alt="Upliftt"></div>
-    <div class="client-card"><img src="assets/clients/Playgeko%20logo.svg" alt="Playgeko"></div>
-    <div class="client-card" style="overflow:hidden"><img src="assets/clients/Playsonic%20Logo.jpg" alt="Playsonic" style="transform:scale(1.4);transform-origin:center" width="640" height="360" loading="lazy"></div>
-    <div class="client-card"><img src="assets/clients/16.%20BK%20Plus%20Europe.png" alt="BK Plus Europe" style="transform:scale(0.7);transform-origin:center" width="330" height="240" loading="lazy"></div>
+    <div class="client-card"><img width="800" height="670" decoding="async" loading="lazy" src="assets/clients/1%20Paltel.webp" alt="Paltel"></div>
+    <div class="client-card" style="overflow:hidden"><img width="410" height="410" decoding="async" loading="lazy" src="assets/clients/2%20Jawwal.svg" alt="Jawwal" style="transform:scale(1.1);transform-origin:center"></div>
+    <div class="client-card"><img width="800" height="307" decoding="async" loading="lazy" src="assets/clients/3%20Reach.webp" alt="Reach"></div>
+    <div class="client-card"><img width="597" height="800" decoding="async" loading="lazy" src="assets/clients/4%20Palestinian%20Authority.webp" alt="Palestinian Authority"></div>
+    <div class="client-card"><img width="800" height="347" decoding="async" loading="lazy" src="assets/clients/5%20PCBS.webp" alt="PCBS"></div>
+    <div class="client-card"><img width="800" height="450" decoding="async" loading="lazy" src="assets/clients/6%20Ministry%20of%20Telecommunications%20%26%20Digital%20Economy.webp" alt="MTIT"></div>
+    <div class="client-card" style="overflow:hidden"><img decoding="async" src="assets/clients/MTIT%20New.avif" alt="MTIT New" style="transform:scale(1.47);transform-origin:center" width="500" height="300" loading="lazy"></div>
+    <div class="client-card" style="overflow:hidden"><img decoding="async" src="assets/clients/PMA%20Final%20.jpg" alt="PMA" style="transform:scale(1.27);transform-origin:center" width="640" height="360" loading="lazy"></div>
+    <div class="client-card"><img width="800" height="609" decoding="async" loading="lazy" src="assets/clients/8%20World%20Bank.webp" alt="World Bank"></div>
+    <div class="client-card"><img width="800" height="800" decoding="async" loading="lazy" src="assets/clients/9%20Bank%20of%20Palestine.webp" alt="Bank of Palestine"></div>
+    <div class="client-card"><img width="800" height="411" decoding="async" loading="lazy" src="assets/clients/12%20AlQuds%20Pharma.webp" alt="AlQuds Pharma"></div>
+    <div class="client-card"><img width="800" height="522" decoding="async" loading="lazy" src="assets/clients/13%20GIZ.webp" alt="GIZ"></div>
+    <div class="client-card"><img width="800" height="293" decoding="async" loading="lazy" src="assets/clients/14%20Munib%20%26%20Angela%20Masri%20Logo.webp" alt="Munib &amp; Angela Masri"></div>
+    <div class="client-card"><img width="800" height="550" decoding="async" loading="lazy" src="assets/clients/15%20Upliftt.webp" alt="Upliftt"></div>
+    <div class="client-card"><img width="1288" height="230" decoding="async" loading="lazy" src="assets/clients/Playgeko%20logo.svg" alt="Playgeko"></div>
+    <div class="client-card" style="overflow:hidden"><img decoding="async" src="assets/clients/Playsonic%20Logo.jpg" alt="Playsonic" style="transform:scale(1.4);transform-origin:center" width="640" height="360" loading="lazy"></div>
+    <div class="client-card"><img decoding="async" src="assets/clients/16.%20BK%20Plus%20Europe.png" alt="BK Plus Europe" style="transform:scale(0.7);transform-origin:center" width="330" height="240" loading="lazy"></div>
+    <div class="client-card"><img src="assets/clients/BMORE%20Jordan.webp" alt="BMORE Jordan" width="600" height="300" loading="lazy" decoding="async"></div>
+    <div class="client-card"><img width="800" height="670" decoding="async" loading="lazy" src="assets/clients/1%20Paltel.webp" alt="Paltel"></div>
+    <div class="client-card" style="overflow:hidden"><img width="410" height="410" decoding="async" loading="lazy" src="assets/clients/2%20Jawwal.svg" alt="Jawwal" style="transform:scale(1.1);transform-origin:center"></div>
+    <div class="client-card"><img width="800" height="307" decoding="async" loading="lazy" src="assets/clients/3%20Reach.webp" alt="Reach"></div>
+    <div class="client-card"><img width="597" height="800" decoding="async" loading="lazy" src="assets/clients/4%20Palestinian%20Authority.webp" alt="Palestinian Authority"></div>
+    <div class="client-card"><img width="800" height="347" decoding="async" loading="lazy" src="assets/clients/5%20PCBS.webp" alt="PCBS"></div>
+    <div class="client-card"><img width="800" height="450" decoding="async" loading="lazy" src="assets/clients/6%20Ministry%20of%20Telecommunications%20%26%20Digital%20Economy.webp" alt="MTIT"></div>
+    <div class="client-card" style="overflow:hidden"><img decoding="async" src="assets/clients/MTIT%20New.avif" alt="MTIT New" style="transform:scale(1.47);transform-origin:center" width="500" height="300" loading="lazy"></div>
+    <div class="client-card" style="overflow:hidden"><img decoding="async" src="assets/clients/PMA%20Final%20.jpg" alt="PMA" style="transform:scale(1.27);transform-origin:center" width="640" height="360" loading="lazy"></div>
+    <div class="client-card"><img width="800" height="609" decoding="async" loading="lazy" src="assets/clients/8%20World%20Bank.webp" alt="World Bank"></div>
+    <div class="client-card"><img width="800" height="800" decoding="async" loading="lazy" src="assets/clients/9%20Bank%20of%20Palestine.webp" alt="Bank of Palestine"></div>
+    <div class="client-card"><img width="800" height="411" decoding="async" loading="lazy" src="assets/clients/12%20AlQuds%20Pharma.webp" alt="AlQuds Pharma"></div>
+    <div class="client-card"><img width="800" height="522" decoding="async" loading="lazy" src="assets/clients/13%20GIZ.webp" alt="GIZ"></div>
+    <div class="client-card"><img width="800" height="293" decoding="async" loading="lazy" src="assets/clients/14%20Munib%20%26%20Angela%20Masri%20Logo.webp" alt="Munib &amp; Angela Masri"></div>
+    <div class="client-card"><img width="800" height="550" decoding="async" loading="lazy" src="assets/clients/15%20Upliftt.webp" alt="Upliftt"></div>
+    <div class="client-card"><img width="1288" height="230" decoding="async" loading="lazy" src="assets/clients/Playgeko%20logo.svg" alt="Playgeko"></div>
+    <div class="client-card" style="overflow:hidden"><img decoding="async" src="assets/clients/Playsonic%20Logo.jpg" alt="Playsonic" style="transform:scale(1.4);transform-origin:center" width="640" height="360" loading="lazy"></div>
+    <div class="client-card"><img decoding="async" src="assets/clients/16.%20BK%20Plus%20Europe.png" alt="BK Plus Europe" style="transform:scale(0.7);transform-origin:center" width="330" height="240" loading="lazy"></div>
+    <div class="client-card"><img src="assets/clients/BMORE%20Jordan.webp" alt="BMORE Jordan" width="600" height="300" loading="lazy" decoding="async"></div>
   </div>
 </div>
 <section class="section-pad-lg" style="background:var(--pearl);" id="book">

@@ -21,8 +21,12 @@
 - Structured data (JSON-LD) added to about.html, services.html, blog.html
 - Cloudflare email obfuscation disabled (resolved 11 broken link errors)
 - Sitemap lastmod dates updated and resubmitted to Google Search Console
+- Nov 2026: carousel logos converted to WebP (2.6 MB → ~340 KB), BMORE Jordan added, breadcrumbs/FAQ/services structured data, 1200×630 share card, thanks.html noindex, contact mobile overflow fixed
 
 ## Pending
+- Create the missing `assets/og-manifesto.png` (manifesto.html points to it; file does not exist, so manifesto shares show no image)
+- Decide on duplicate logos: MTIT appears twice (old + new) on all pages; homepage also shows PMA twice
+- After deploy: run Google Rich Results Test on contact.html (FAQ) and resubmit sitemap
 - Monitor Google Ads performance
 - Monitor Google Business Profile for reviews
 - Respond to Google reviews promptly

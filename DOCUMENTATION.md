@@ -150,6 +150,18 @@ ramlatech/
 
 ## 6. Changelog
 
+### v2.3 — November 20, 2026
+**Performance & SEO pass + BMORE Jordan**
+
+- **Client logos −87%:** the 12 heaviest carousel SVGs (base64-embedded bitmaps, up to 800 KB each) converted to WebP, rendered in Chrome at the same framing so they look identical. Carousel weight 2.6 MB → ~340 KB per page. Small files (Jawwal, Playgeko SVGs; Playsonic/PMA Final JPG; MTIT New AVIF; BK Plus PNG) unchanged.
+- **BMORE Jordan** added to the carousel on all four pages (after BK Plus Europe, in both halves of each track).
+- **All carousel images** now have `width`/`height`, `loading="lazy"` and `decoding="async"`.
+- **Structured data:** BreadcrumbList on about, services, contact, blog, manifesto; OfferCatalog of the 9 services on services; FAQPage (the 6 on-page FAQs) on contact. Added as extra `ld+json` blocks — existing blocks untouched.
+- **Share image:** new 1200×630 `assets/og-card.jpg` ("Software House from Palestine to the World.") for `og:image`/`twitter:image` on index, about, services, contact, blog. Manifesto keeps its own.
+- **thanks.html:** `noindex, nofollow` + meta description.
+- **sitemap.xml:** lastmod refreshed.
+- **Mobile fix:** contact.html no longer scrolls 13px sideways on phones (booking button can wrap; grid children `min-width: 0`).
+
 ### v2.2 — April 19, 2026
 **SEO & Performance Checkup — 5 issues resolved**
 
@@ -365,7 +377,9 @@ Auto-scrolling strip of client logos displayed on all four main pages.
 | All others | default | no override |
 
 ### Assets
-Logo files stored in `assets/clients/` — 18 active logos (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT ×2, PMA Final, World Bank, Bank of Palestine, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt, Playgeko, Playsonic, BK Plus Europe).
+Logo files stored in `assets/clients/` — 18 active cards (Paltel, Jawwal, Reach, Palestinian Authority, PCBS, MTIT ×2, PMA Final, World Bank, Bank of Palestine, AlQuds Pharma, GIZ, Munib & Angela Masri, Upliftt, Playgeko, Playsonic, BK Plus Europe, BMORE Jordan). Homepage also shows the old `7 PMA` logo next to `PMA Final`.
+
+**Served files (Nov 2026):** the 12 formerly heavy SVGs are now served as same-name `.webp` (e.g. `1 Paltel.webp`); the `.svg` versions stay in the folder as editable sources but are not referenced. To change one of those logos: edit the SVG, then re-render it in Chrome to a canvas (800px on the long side) and export WebP at 0.88 — do not use librsvg/sharp/QuickLook, they mis-render the masked SVGs (e.g. PMA). BMORE Jordan is `BMORE Jordan.webp`, a 600×300 white canvas.
 
 Source: `ACT+ Customer Logos Updated/Large/` folder on Desktop. Each SVG was post-processed:
 - `viewBox` tightened to clip-path bounds (or image-transform bounds where no clip-path existed)
