@@ -160,6 +160,7 @@ ramlatech/
 - **Share image:** new 1200×630 `assets/og-card.jpg` ("Software House from Palestine to the World.") for `og:image`/`twitter:image` on index, about, services, contact, blog. Manifesto keeps its own.
 - **thanks.html:** `noindex, nofollow` + meta description.
 - **sitemap.xml:** lastmod refreshed.
+- **Manifesto share image:** `assets/og-manifesto.png` (1200×630) rendered with headless Chrome from `assets/og-manifesto.html` (edit the HTML, then re-run the capture command at the bottom of that file).
 - **Mobile fix:** contact.html no longer scrolls 13px sideways on phones (booking button can wrap; grid children `min-width: 0`).
 
 ### v2.2 — April 19, 2026
