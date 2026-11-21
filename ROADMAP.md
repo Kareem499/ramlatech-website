@@ -1,6 +1,7 @@
 # Ramlatech Website Roadmap
 
 ## Completed
+- Nov 2026: blog dashboard at /admin (write & schedule posts), Playgeko-style blog with categories, plus AI posts every 2 days incl. sourced comparisons (see DOCUMENTATION.md §18)
 - Client logo carousel added to all 4 pages (index, about, services, contact) — 15 ACT+ client SVGs, auto-scrolling, dark navy strip
 - Website launched on GitHub Pages
 - Custom domain configured: ramlatech.com
@@ -24,6 +25,8 @@
 - Nov 2026: carousel logos converted to WebP (2.6 MB → ~340 KB), BMORE Jordan added, breadcrumbs/FAQ/services structured data, 1200×630 share card, thanks.html noindex, contact mobile overflow fixed
 
 ## Pending
+- Create a GitHub fine-grained token and sign in at ramlatech.com/admin
+- Add ANTHROPIC_API_KEY GitHub secret to start AI posts (then run the *Blog* workflow once with *Write an AI post now* and review it)
 - Create the missing `assets/og-manifesto.png` (manifesto.html points to it; file does not exist, so manifesto shares show no image)
 - Decide on duplicate logos: MTIT appears twice (old + new) on all pages; homepage also shows PMA twice
 - After deploy: run Google Rich Results Test on contact.html (FAQ) and resubmit sitemap

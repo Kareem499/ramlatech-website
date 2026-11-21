@@ -511,6 +511,44 @@ All links that open in a new tab (`target="_blank"`) **must** include `rel="noop
 | 3 | AI automation for SMEs — where to start and what to expect | AI automation small business | SMEs exploring AI | Book free AI consultation |
 | 4 | How much does custom software development cost in 2026? | custom software development cost | Businesses budgeting for software | Get a free quote |
 
+### Blog dashboard & publishing (since Nov 2026)
+
+**Write and schedule posts at https://ramlatech.com/admin/** (Sveltia CMS). Each post is a Markdown file in `content/blog/`; the dashboard saves straight to the GitHub repo.
+
+**Signing in:** click *Sign In Using Access Token* and paste a GitHub **fine-grained token**: GitHub → Settings → Developer settings → Fine-grained tokens → Generate → *Only select repositories*: `ramlatech-website` → Repository permissions: **Contents: Read and write**. The token stays in that browser. Anyone you want to let in needs Write access to the repo and their own token. (Optional upgrade: deploy the Sveltia CMS Authenticator on Cloudflare for a "Sign in with GitHub" button — see the comment in `admin/config.yml`.)
+
+**Publishing rules**
+| You set | What happens |
+|---|---|
+| Publish date in the past / now | Goes live within a few minutes of saving |
+| Publish date in the future | Scheduled: goes live within the hour after that time |
+| *Draft* ticked | Never shown, whatever the date |
+| Delete the post in the dashboard | Removed from the site at the next build |
+
+Dates are entered in your local time and saved in UTC.
+
+**AI posts:** Claude (`claude-opus-5-5`) also writes one post every 2 days (365 in all, from 2026-11-21), saved into `content/blog/` with *Written by AI* ticked — you can edit or delete them in the dashboard like any post. Every third AI post is a **comparison** (agency vs alternatives, or tech/tool buyer's guides): Claude researches with web search, only links actually returned by those searches are kept, a dated *Sources* list is added, and a comparison with fewer than 3 verified sources is not published. AI attempts run once a day at 06:00 UTC; a failure simply retries the next day. Needs the repository secret `ANTHROPIC_API_KEY`; without it only your own posts publish.
+
+| Piece | File |
+|---|---|
+| Dashboard | `admin/index.html`, `admin/config.yml` (fields, categories) |
+| Posts (source of truth) | `content/blog/*.md` · uploaded images in `assets/blog/` |
+| Builder | `scripts/blog/build.py` — generates `blog.html` listing, `blog/` (posts, `page/`, `category/`, `feed.xml`) and the blog part of `sitemap.xml` |
+| AI writer | `scripts/blog/autopublish.py` · voice & rules `scripts/blog/brief.md` · upcoming topics `scripts/blog/topics.json` |
+| Schedule | `.github/workflows/blog.yml` — hourly at :07 UTC, on every dashboard save, or manually |
+
+**Generated — do not edit by hand:** everything in `blog/`, the area of `blog.html` between the `BLOG-LISTING` markers, and the sitemap between the `BLOG-AUTO` markers. The hero at the top of `blog.html` is still yours to edit.
+
+**Categories:** Startups · AI & Automation · Development · Security · Strategy · Budgeting · Comparisons (edit the list in both `admin/config.yml` and `CATEGORIES` in `scripts/blog/build.py`).
+
+**Day-to-day**
+- AI post now: GitHub → Actions → *Blog* → Run workflow → tick *Write an AI post now*.
+- Pause everything: GitHub → Actions → *Blog* → ⋯ → Disable workflow.
+- Preview locally: `pip install markdown pyyaml` then `python scripts/blog/build.py` and open `blog.html` via a local server.
+- **Always `git pull` before editing the site locally** — the dashboard and the bot both commit to `main`.
+
+**Notes:** posts are English only (the Arabic toggle translates the nav, not articles). Cards without a cover image get a branded colour cover by category.
+
 ### Content Flywheel Per Post
 ```
 Blog post (SEO)

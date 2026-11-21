@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Ramlatech blog dashboard (Sveltia CMS) — https://ramlatech.com/admin/
+# This file is public; never put secrets here.
+
+backend:
+  name: github
+  repo: Kareem499/ramlatech-website
+  branch: main
+  # Sign in with a GitHub fine-grained token (Contents: read & write on this repo).
+  # To offer a "Sign in with GitHub" button instead, deploy the Sveltia CMS Authenticator
+  # (https://github.com/sveltia/sveltia-cms-auth), add `base_url: <its URL>` and allow oauth below.
+  auth_methods: [token]
+
+site_url: https://ramlatech.com
+display_url: https://ramlatech.com
+
+media_folder: /assets/blog
+public_folder: /assets/blog
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    description: >-
+      Posts go live automatically once their publish date has passed (checked every hour).
+      A future date schedules the post. Tick Draft to keep it hidden.
+    folder: /content/blog
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    summary: "{{title}} · {{category}} · {{date}}"
+    sortable_fields:
+      - { field: date, label: Publish date, default_sort: desc }
+      - title
+      - category
+    fields:
+      - { name: title, label: Title, widget: string, hint: "Aim for 70 characters or fewer." }
+      - name: date
+        label: Publish date & time
+        widget: datetime
+        default: "{{now}}"
+        output_utc: true
+        hint: "Shown in your local time. A future time schedules the post; it goes live within the hour after."
+      - { name: draft, label: Draft (keep hidden), widget: boolean, default: false, required: false }
+      - name: category
+        label: Category
+        widget: select
+        default: Strategy
+        options: [Startups, AI & Automation, Development, Security, Strategy, Budgeting, Comparisons]
+      - { name: author, label: Author, widget: string, default: Ramlatech Team }
+      - { name: excerpt, label: Card excerpt, widget: text, required: false, hint: "One or two sentences shown on the blog card. Leave empty to use the opening of the article." }
+      - { name: description, label: SEO description, widget: text, required: false, hint: "140–155 characters for Google. Defaults to the excerpt." }
+      - { name: cover, label: Cover image, widget: image, required: false, hint: "Optional. Wide image (about 1600×850). Without one, the card uses a branded colour cover." }
+      - { name: generated, label: Written by AI, widget: boolean, default: false, required: false, readonly: true }
+      - { name: body, label: Article, widget: markdown }

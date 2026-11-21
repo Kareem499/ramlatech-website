@@ -1,0 +1,95 @@
+# Ramlatech blog: publishes scheduled posts, adds an AI post every 2 days, rebuilds the blog.
+#
+# - Hourly: publishes any post whose date has passed (posts from /admin or the AI).
+# - On push to content/blog (e.g. saving in /admin): rebuilds right away.
+# - AI posts need the repository secret ANTHROPIC_API_KEY
+#   (GitHub → Settings → Secrets and variables → Actions). Without it, only your own posts publish.
+name: Blog
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # every hour at :07 (UTC)
+  push:
+    branches: [main]
+    paths: ["content/blog/**", "assets/blog/**", "scripts/blog/**"]
+  workflow_dispatch:
+    inputs:
+      force_ai:
+        description: "Write an AI post now even if one is not due"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit the rebuilt blog
+  pages: write      # request a GitHub Pages rebuild
+
+concurrency:
+  group: blog
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet "anthropic>=2.12,<3" "markdown>=3.6,<4" "pyyaml>=6,<7"
+
+      - name: Write an AI post if one is due
+        id: ai
+        if: github.event_name != 'push'
+        continue-on-error: true   # never block publishing your own scheduled posts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BLOG_MODEL: ${{ vars.BLOG_MODEL }}
+          FORCE_AI: ${{ inputs.force_ai }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::notice::AI posts are paused: add the ANTHROPIC_API_KEY repository secret to start them."
+            exit 0
+          fi
+          # Hourly runs only publish scheduled posts; the AI is tried once a day (06:xx UTC)
+          # so a failed attempt retries tomorrow instead of every hour.
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$(date -u +%H)" != "06" ]; then
+            echo "AI posts are attempted at 06:00 UTC only."
+            exit 0
+          fi
+          if [ "$FORCE_AI" = "true" ]; then
+            python scripts/blog/autopublish.py --force
+          else
+            python scripts/blog/autopublish.py
+          fi
+
+      - name: Build the blog
+        run: python scripts/blog/build.py
+
+      - name: Commit and push changes
+        id: commit
+        env:
+          AI_TITLE: ${{ steps.ai.outputs.title }}
+        run: |
+          git add -A blog blog.html sitemap.xml content/blog scripts/blog/topics.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "ramlatech-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$AI_TITLE" ]; then MSG="blog: $AI_TITLE"; else MSG="blog: publish scheduled posts / rebuild"; fi
+          git commit -m "$MSG"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Rebuild GitHub Pages
+        if: steps.commit.outputs.pushed == 'true'
+        continue-on-error: true   # Pages normally rebuilds on push anyway
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

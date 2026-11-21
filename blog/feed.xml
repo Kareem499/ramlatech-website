@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Ramlatech Blog</title>
+  <link>https://ramlatech.com/blog.html</link>
+  <atom:link href="https://ramlatech.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+  <description>Practical guides on software, AI and building great products from Ramlatech.</description>
+  <language>en</language>
+
+</channel>
+</rss>
