@@ -1,15 +1,47 @@
 {
   "_comment": "Upcoming AI topics, used top to bottom. Add \"type\": \"comparison\" for posts that need web research and sources. Categories: Startups, AI & Automation, Development, Security, Strategy, Budgeting, Comparisons. When the list is empty, Claude picks its own topics (every third one a comparison).",
   "queue": [
-    {"title": "What is an MVP? How to Build One and Get to Market Fast", "category": "Startups"},
-    {"title": "Software agency vs freelancers vs in-house team: which is right for you?", "category": "Comparisons", "type": "comparison"},
-    {"title": "AI automation for SMEs — where to start and what to expect", "category": "AI & Automation"},
-    {"title": "Flutter vs React Native in 2026: which should you choose for your app?", "category": "Comparisons", "type": "comparison"},
-    {"title": "How much does custom software development cost in 2026?", "category": "Budgeting"},
-    {"title": "Upwork vs Toptal vs a boutique agency: where should you hire developers?", "category": "Comparisons", "type": "comparison"},
-    {"title": "How to choose a software agency — 10 questions to ask before you sign", "category": "Strategy"},
-    {"title": "No-code vs custom software: when each one makes sense", "category": "Comparisons", "type": "comparison"},
-    {"title": "Shopify vs WooCommerce vs a custom online store", "category": "Comparisons", "type": "comparison"},
-    {"title": "AWS vs Azure vs Google Cloud for startups and SMEs", "category": "Comparisons", "type": "comparison"}
+    {
+      "title": "Software agency vs freelancers vs in-house team: which is right for you?",
+      "category": "Comparisons",
+      "type": "comparison"
+    },
+    {
+      "title": "AI automation for SMEs — where to start and what to expect",
+      "category": "AI & Automation"
+    },
+    {
+      "title": "Flutter vs React Native in 2026: which should you choose for your app?",
+      "category": "Comparisons",
+      "type": "comparison"
+    },
+    {
+      "title": "How much does custom software development cost in 2026?",
+      "category": "Budgeting"
+    },
+    {
+      "title": "Upwork vs Toptal vs a boutique agency: where should you hire developers?",
+      "category": "Comparisons",
+      "type": "comparison"
+    },
+    {
+      "title": "How to choose a software agency — 10 questions to ask before you sign",
+      "category": "Strategy"
+    },
+    {
+      "title": "No-code vs custom software: when each one makes sense",
+      "category": "Comparisons",
+      "type": "comparison"
+    },
+    {
+      "title": "Shopify vs WooCommerce vs a custom online store",
+      "category": "Comparisons",
+      "type": "comparison"
+    },
+    {
+      "title": "AWS vs Azure vs Google Cloud for startups and SMEs",
+      "category": "Comparisons",
+      "type": "comparison"
+    }
   ]
 }

@@ -6,6 +6,13 @@
   <atom:link href="https://ramlatech.com/blog/feed.xml" rel="self" type="application/rss+xml" />
   <description>Practical guides on software, AI and building great products from Ramlatech.</description>
   <language>en</language>
-
+  <item>
+    <title>What is an MVP? How to Build One and Get to Market Fast</title>
+    <link>https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html</link>
+    <guid isPermaLink="true">https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html</guid>
+    <pubDate>Sun, 22 Nov 2026 08:38:17 +0000</pubDate>
+    <category>Startups</category>
+    <description>An MVP is the smallest thing you can put in front of real users to test your riskiest assumption. Here&#x27;s how to scope one, build it and launch quickly without cutting the wrong corners.</description>
+  </item>
 </channel>
 </rss>

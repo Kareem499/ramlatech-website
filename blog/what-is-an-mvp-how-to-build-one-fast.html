@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What is an MVP? How to Build One and Get to Market Fast | Ramlatech Blog</title>
+<meta name="description" content="Learn what an MVP really is, how to scope one around a single risky assumption, and a practical step-by-step plan to build, launch and learn quickly." />
+<meta name="author" content="Ramlatech Team" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html" />
+<meta property="og:title" content="What is an MVP? How to Build One and Get to Market Fast" />
+<meta property="og:description" content="Learn what an MVP really is, how to scope one around a single risky assumption, and a practical step-by-step plan to build, launch and learn quickly." />
+<meta property="og:image" content="https://ramlatech.com/assets/og-card.jpg" />
+<meta property="og:site_name" content="Ramlatech" />
+<meta property="article:published_time" content="2026-11-22T08:38:17Z" />
+<meta property="article:section" content="Startups" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ramlatech" />
+<meta name="twitter:title" content="What is an MVP? How to Build One and Get to Market Fast" />
+<meta name="twitter:description" content="Learn what an MVP really is, how to scope one around a single risky assumption, and a practical step-by-step plan to build, launch and learn quickly." />
+<meta name="twitter:image" content="https://ramlatech.com/assets/og-card.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "What is an MVP? How to Build One and Get to Market Fast",
+      "description": "Learn what an MVP really is, how to scope one around a single risky assumption, and a practical step-by-step plan to build, launch and learn quickly.",
+      "datePublished": "2026-11-22T08:38:17Z",
+      "url": "https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html",
+      "mainEntityOfPage": "https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html",
+      "image": "https://ramlatech.com/assets/og-card.jpg",
+      "wordCount": 1558,
+      "articleSection": "Startups",
+      "author": {
+        "@type": "Organization",
+        "name": "Ramlatech Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ramlatech",
+        "url": "https://ramlatech.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ramlatech.com/assets/logo-navy.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ramlatech.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://ramlatech.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Startups",
+          "item": "https://ramlatech.com/blog/category/startups.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What is an MVP? How to Build One and Get to Market Fast",
+          "item": "https://ramlatech.com/blog/what-is-an-mvp-how-to-build-one-fast.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/png" href="/assets/mark-navy.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cairo:wght@400;500;600;700&display=swap" />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="stylesheet" href="/main.css" />
+<link rel="alternate" type="application/rss+xml" title="Ramlatech Blog" href="/blog/feed.xml" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXS97MYKLJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KXS97MYKLJ');</script>
+<style>
+.post-hero{background:linear-gradient(150deg,#0a1c33 0%,#0E1F38 60%,#0d2840 100%);padding:10rem 0 4.5rem}
+.post-hero .wrap,.post-main .wrap{max-width:760px;margin:0 auto;padding:0 5%}
+.crumbs{font-family:var(--font-mono);font-size:.78rem;color:rgba(250,248,244,.55);margin-bottom:1.5rem}
+.crumbs a{color:rgba(250,248,244,.8)}.crumbs a:hover{color:var(--gold)}
+.post-cat{font-family:var(--font-display);font-size:.75rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#3ecfcf}
+.post-cat.gold{color:var(--gold)}.post-cat.navy{color:#9fb3cf}.post-cat.olive{color:#8fc086}
+.post-hero h1{font-family:var(--font-display);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;color:var(--pearl);letter-spacing:-.03em;line-height:1.12;margin:.75rem 0 1.25rem}
+.post-hero .meta{font-size:.88rem;color:rgba(250,248,244,.65)}
+.post-main{background:var(--pearl);padding:3.5rem 0 5rem}
+.post-cover{width:100%;height:auto;border-radius:16px;margin-bottom:2.5rem;display:block}
+.article{font-size:1.06rem;line-height:1.8;color:var(--ink)}
+.article h2{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.25;margin:2.6rem 0 1rem}
+.article h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy);margin:2rem 0 .75rem}
+.article h4{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy);margin:1.5rem 0 .5rem}
+.article p{margin:0 0 1.25rem}
+.article ul,.article ol{margin:0 0 1.4rem 1.4rem;padding:0}.article ul{list-style:disc}.article ol{list-style:decimal}
+.article li{margin:.4rem 0}
+.article a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}.article a:hover{color:var(--navy)}
+.article blockquote{border-left:3px solid var(--gold);padding:.25rem 0 .25rem 1.25rem;margin:1.75rem 0;color:var(--stone);font-style:italic}
+.article code{font-family:var(--font-mono);font-size:.9em;background:rgba(14,31,56,.06);padding:.1em .35em;border-radius:4px}
+.article pre{background:var(--navy);color:#e8eef6;padding:1.1rem 1.25rem;border-radius:12px;overflow-x:auto;margin:0 0 1.5rem}
+.article pre code{background:none;padding:0;color:inherit}
+.article img{max-width:100%;height:auto;border-radius:12px;margin:1rem 0}
+.article hr{border:0;border-top:1px solid rgba(14,31,56,.12);margin:2.5rem 0}
+.article table{width:100%;border-collapse:collapse;margin:0 0 1.75rem;font-size:.95rem;display:block;overflow-x:auto}
+.article th,.article td{border:1px solid rgba(14,31,56,.12);padding:.6rem .8rem;text-align:left;vertical-align:top}
+.article th{background:rgba(14,31,56,.05);font-family:var(--font-display);font-weight:600;color:var(--navy)}
+.post-cta{margin-top:3.5rem;background:var(--navy);border-radius:18px;padding:2.25rem;color:var(--pearl)}
+.post-cta h2{font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:.6rem;color:var(--pearl)}
+.post-cta p{color:rgba(250,248,244,.7);margin-bottom:1.25rem;line-height:1.7}
+.more-posts{margin-top:3.5rem}
+.more-posts h2{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1rem}
+.more-posts a{display:block;padding:.9rem 0;border-top:1px solid rgba(14,31,56,.08);font-family:var(--font-display);font-weight:600;color:var(--navy)}
+.more-posts a:hover{color:var(--teal)}
+.more-posts span{display:block;font-family:var(--font-mono);font-size:.72rem;font-weight:400;color:var(--stone);margin-top:.2rem}
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <a href="/index.html" class="nav-logo"><img src="/assets/logo-nav.png" alt="Ramlatech boutique software agency logo" width="499" height="128" /></a>
+  <div class="nav-links">
+    <a href="/index.html" data-i18n="nav.home">Home</a>
+    <a href="/about.html" data-i18n="nav.about">About</a>
+    <a href="/manifesto.html">Manifesto</a>
+    <a href="/services.html" data-i18n="nav.services">Services</a>
+    <a href="/blog.html" data-i18n="nav.blog">Blog</a>
+    <a href="/contact.html" data-i18n="nav.contact">Contact</a>
+    <a href="/contact.html#book" class="nav-cta" data-i18n="nav.book">Book a Call</a>
+  </div>
+  <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">العربية</button>
+  <div class="nav-burger"><span></span><span></span><span></span></div>
+</nav>
+<header class="post-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="/index.html">Home</a> / <a href="/blog.html">Blog</a> / <a href="/blog/category/startups.html">Startups</a></div>
+    <div class="post-cat teal">Startups</div>
+    <h1>What is an MVP? How to Build One and Get to Market Fast</h1>
+    <div class="meta">Ramlatech Team · Nov 22, 2026 · 7 min read</div>
+  </div>
+</header>
+<main class="post-main">
+  <div class="wrap">
+    
+    <article class="article">
+<p>Most founders have heard &quot;start with an MVP.&quot; Fewer agree on what that means. To some it&#x27;s a rough prototype. To others it&#x27;s a full product with the extras taken off. That confusion is expensive. It&#x27;s how teams spend six months building a &quot;minimum&quot; product that nobody asked for.</p>
+<p>This guide covers what an MVP actually is, the different forms it can take, and a step-by-step way to build one and get it to real users quickly.</p>
+<h2>What an MVP actually is</h2>
+<p>An MVP (minimum viable product) is <strong>the smallest thing you can put in front of real users that tests your riskiest assumption</strong>.</p>
+<p>That definition has three parts:</p>
+<ul>
+<li><strong>Smallest.</strong> Every feature that doesn&#x27;t help the test is a cost and a delay.</li>
+<li><strong>Real users.</strong> Not your co-founder, not your friends being polite. People who have the problem you&#x27;re solving.</li>
+<li><strong>Riskiest assumption.</strong> An MVP is an experiment. If you can&#x27;t say what you&#x27;re testing, you&#x27;re building a small product, not running an experiment.</li>
+</ul>
+<p>Note the word <em>viable</em>. It has to work well enough that someone can get real value from it. A buggy, confusing product doesn&#x27;t tell you whether the idea is bad. It only tells you the execution was.</p>
+<h2>MVP vs prototype vs version 1</h2>
+<p>These three get mixed up all the time. The difference matters because each answers a different question.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Prototype</th>
+<th>MVP</th>
+<th>Version 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Question it answers</strong></td>
+<td>&quot;Do people understand this?&quot;</td>
+<td>&quot;Will people use or pay for this?&quot;</td>
+<td>&quot;Can this grow into a business?&quot;</td>
+</tr>
+<tr>
+<td><strong>Who uses it</strong></td>
+<td>Testers in a guided session</td>
+<td>Real early users</td>
+<td>Your wider target market</td>
+</tr>
+<tr>
+<td><strong>Does it really work?</strong></td>
+<td>Often not (clickable mock-ups)</td>
+<td>Yes, for one core job</td>
+<td>Yes, with polish and depth</td>
+</tr>
+<tr>
+<td><strong>Typical effort (rule of thumb)</strong></td>
+<td>Days to a couple of weeks</td>
+<td>A few weeks to roughly three months</td>
+<td>Several months and ongoing</td>
+</tr>
+</tbody>
+</table>
+<p>A prototype is worth doing before an MVP if the main risk is whether people <em>get</em> your concept. If they already get it and the real question is whether they&#x27;ll change their behaviour, go straight to the MVP.</p>
+<h2>Your MVP doesn&#x27;t have to be software</h2>
+<p>Some of the best MVPs involve very little code. Pick the cheapest format that genuinely tests your assumption:</p>
+<ul>
+<li><strong>Landing page test.</strong> You describe the product, show a price and measure sign-ups or pre-orders. This tests demand, not usability.</li>
+<li><strong>Concierge MVP.</strong> You deliver the service by hand to a few customers. A &quot;smart meal planner&quot; might start as you writing meal plans in a spreadsheet. This tests whether the outcome is valuable.</li>
+<li><strong>&quot;Wizard of Oz&quot; MVP.</strong> Users see what looks like an automated product, but a person is doing the work behind the scenes. This is useful for testing AI or matching ideas before you invest in automation.</li>
+<li><strong>Single-feature product.</strong> Real software that does one job well. This is what most people mean by MVP, and you need it when the experience itself is the thing being tested.</li>
+<li><strong>Pilot with one customer.</strong> This one is common in B2B. You build for one design partner who commits time (and ideally money) in exchange for early access.</li>
+</ul>
+<p>If a spreadsheet and a WhatsApp group can tell you what you need to know, start there. Software comes later, once you know what&#x27;s worth building.</p>
+<h2>How to build an MVP: a step-by-step plan</h2>
+<h3>1. Write down your riskiest assumption</h3>
+<p>Finish this sentence: <em>&quot;This whole business fails if it turns out that…&quot;</em></p>
+<p>Common answers:</p>
+<ul>
+<li>&quot;...clinic managers won&#x27;t switch away from paper booking.&quot;</li>
+<li>&quot;...small retailers won&#x27;t pay a monthly fee for this.&quot;</li>
+<li>&quot;...drivers won&#x27;t accept jobs through an app.&quot;</li>
+</ul>
+<p>Pick the one that would hurt most if you got it wrong. The MVP exists to test that assumption first.</p>
+<h3>2. Get specific about who it&#x27;s for</h3>
+<p>&quot;SMEs in the GCC&quot; is a market. &quot;Owners of independent pharmacies in Riyadh with one to three branches&quot; is a user you can actually find, talk to and build for. A narrow first audience makes every scoping decision easier.</p>
+<h3>3. Define success before you build</h3>
+<p>Decide in advance what result means &quot;keep going.&quot; For example:</p>
+<ul>
+<li>20 of the first 50 invited users complete the core task in week one</li>
+<li>5 businesses agree to a paid pilot</li>
+<li>30% of users come back in the second week</li>
+</ul>
+<p>These are examples, not benchmarks. The right numbers depend on your market. What matters is writing them down <em>before</em> launch so you can&#x27;t explain away a weak result afterwards.</p>
+<h3>4. Map the one core journey and cut everything else</h3>
+<p>Sketch the shortest path from &quot;user arrives&quot; to &quot;user gets the value.&quot; Everything on that path is in scope. Everything else goes on a &quot;later&quot; list.</p>
+<p>Features that usually belong on the later list:</p>
+<ul>
+<li>Admin dashboards (use the database or a spreadsheet for now)</li>
+<li>Multiple user roles and permissions</li>
+<li>Social logins beyond one option</li>
+<li>Notifications beyond the essential ones</li>
+<li>Advanced settings and customisation</li>
+<li>A second platform (pick iOS <em>or</em> Android <em>or</em> web to start, unless your users are split evenly)</li>
+</ul>
+<h3>5. Make boring technology choices</h3>
+<p>Speed comes from familiar, well-supported tools, not clever ones. Use a mainstream framework, managed hosting and off-the-shelf services for payments, email, authentication and maps. Build only the part that makes your product different.</p>
+<p>Cross-platform frameworks or a responsive web app can get you onto several devices from one codebase, which often makes sense for a first release. If you&#x27;re unsure which route fits, our <a href="/services.html#web">web</a> and <a href="/services.html#mobile">mobile</a> teams can walk through the trade-offs for your situation.</p>
+<h3>6. Timebox it</h3>
+<p>Set a fixed launch date and cut scope to hit it, not the other way round. As a rough rule of thumb, many software MVPs can reach first users in <strong>six to twelve weeks</strong>. If your plan says six months, the scope probably isn&#x27;t minimal yet.</p>
+<p>Work in short cycles of one to two weeks, with something demonstrable at the end of each. That keeps everyone honest about progress.</p>
+<h3>7. Launch small and stay close to users</h3>
+<p>Don&#x27;t do a big public launch. Invite a small group of the people you identified in step 2. Then:</p>
+<ul>
+<li>Watch how they use it (session recordings or simple analytics on the core journey)</li>
+<li>Talk to them every week, ideally on calls rather than surveys</li>
+<li>Fix the things that block the core journey fast, and ignore the polish requests for now</li>
+</ul>
+<h3>8. Decide: continue, change or stop</h3>
+<p>At the end of your test period, compare the results to the targets from step 3. You have three honest options:</p>
+<ul>
+<li><strong>Continue.</strong> The core assumption held, so build the next most important thing.</li>
+<li><strong>Change direction.</strong> Something worked, but not what you expected. Adjust the audience, pricing or core feature and test again.</li>
+<li><strong>Stop.</strong> The assumption failed. That&#x27;s a cheap lesson compared with finding out after a full build.</li>
+</ul>
+<h2>Corners you should never cut</h2>
+<p>&quot;Minimum&quot; doesn&#x27;t mean careless. Some things are cheap to get right early and painful to fix later:</p>
+<ul>
+<li><strong>Security basics.</strong> Hash passwords properly, use HTTPS everywhere, keep secrets out of your code and restrict who can access production data.</li>
+<li><strong>Payments.</strong> If money changes hands, use an established payment provider and test every edge case. Getting a charge wrong destroys trust instantly.</li>
+<li><strong>Personal data.</strong> Collect only what you need, and understand the data protection rules in the markets you serve.</li>
+<li><strong>Local expectations.</strong> If you&#x27;re launching in the Levant or GCC, proper Arabic and right-to-left support may be part of being <em>viable</em>, not a nice-to-have. The same goes for local payment methods your users actually use.</li>
+<li><strong>Backups.</strong> Losing your early users&#x27; data is a quick way to lose the users too.</li>
+</ul>
+<h2>When you shouldn&#x27;t build an MVP</h2>
+<p>Being honest about this saves money:</p>
+<ul>
+<li><strong>You haven&#x27;t talked to potential users yet.</strong> Do 10–15 conversations first. They cost almost nothing and often reshape the idea.</li>
+<li><strong>The risk is regulatory, not product-related.</strong> In heavily regulated areas like health or financial services, get proper legal advice on what you&#x27;re allowed to launch before writing code.</li>
+<li><strong>You&#x27;re replacing an internal system.</strong> Staff don&#x27;t get to choose whether to adopt it, so &quot;will they use it?&quot; isn&#x27;t the question. A phased rollout plan usually fits better than an MVP.</li>
+<li><strong>A tool already does the job.</strong> If existing software solves 80% of the problem, use it and save custom development for the part that actually sets you apart.</li>
+</ul>
+<h2>Common MVP mistakes</h2>
+<ul>
+<li><strong>Building for everyone.</strong> A product for &quot;all businesses&quot; ends up fitting none of them well.</li>
+<li><strong>Mistaking polish for progress.</strong> A beautiful onboarding flow on top of an untested idea is still an untested idea.</li>
+<li><strong>Skipping the success criteria.</strong> Without them, every result looks &quot;promising.&quot;</li>
+<li><strong>Treating the MVP code as permanent.</strong> Some of it will be rewritten, and that&#x27;s fine. Plan for it instead of over-engineering on day one.</li>
+<li><strong>No one owning the technical decisions.</strong> Non-technical founders often get pulled between conflicting advice. An experienced technical lead, even part-time through a <a href="/services.html#cto">CTO on demand</a> arrangement, can keep scope, architecture and vendors on track.</li>
+</ul>
+<h2>The short version</h2>
+<p>An MVP is a focused experiment, not a cheaper version of your dream product. Name your riskiest assumption, pick a narrow audience, set success targets, build only the core journey with proven tools, launch to a small group and make an honest decision with what you learn.</p>
+<p>Do that well and &quot;getting to market fast&quot; stops being about rushing. You learn sooner, so every month and every dollar after that goes into something people have shown they want.</p>
+    </article>
+    <div class="post-cta">
+      <h2>Planning something similar?</h2>
+      <p>Talk it through with our team — a free 30-minute call, no pitch, just an honest view of what it would take.</p>
+      <a href="/contact.html#book" class="btn btn-primary">Book a free consultation →</a>
+    </div>
+    
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logo-nav.png" alt="Ramlatech boutique software agency logo" style="height:64px;width:auto;" width="499" height="128" loading="lazy" />
+        <p data-i18n="footer.tagline">Rooted in Heritage. Driven by Innovation. A software agency built from Ramla, Palestine — delivering transformative technology to the world.</p>
+        <form class="footer-nl-form" data-newsletter="footer" action="https://assets.mailerlite.com/jsonp/2267517/forms/184727574659729402/subscribe" method="POST">
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <label class="sr-only" for="nl-footer-email-post">Email</label>
+          <input type="email" id="nl-footer-email-post" name="fields[email]" required placeholder="Newsletter email" aria-label="Email" class="footer-nl-input" autocomplete="email" data-i18n-ph="footer.nl_ph">
+          <button type="submit" class="footer-nl-btn">→</button>
+        </form>
+        <div class="footer-nl-success" data-i18n="nl.success">Thanks — check your inbox to confirm.</div>
+        <div class="footer-social" style="margin-top:1.25rem;">
+  <a href="https://www.linkedin.com/company/ramlatech" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://x.com/ramlatech" target="_blank" rel="noopener noreferrer" title="X">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a href="https://www.instagram.com/ramlatech" target="_blank" rel="noopener noreferrer" title="Instagram">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  </a>
+</div>
+      </div>
+      <div class="footer-col"><h4 data-i18n="footer.company">Company</h4><a href="/about.html" data-i18n="footer.about_us">About Us</a><a href="/manifesto.html">Manifesto</a><a href="/about.html#values" data-i18n="footer.our_values">Our Values</a><a href="/about.html#story" data-i18n="footer.our_story">Our Story</a><a href="/contact.html" data-i18n="footer.f_contact">Contact</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.services">Services</h4><a href="/services.html#mobile" data-i18n="footer.mobile_dev">Mobile Dev</a><a href="/services.html#web" data-i18n="footer.web_dev">Web Dev</a><a href="/services.html#ai" data-i18n="footer.ai">AI & Automation</a><a href="/services.html#security" data-i18n="footer.security">Cybersecurity</a><a href="/services.html" data-i18n="footer.all_svcs">All Services</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.get_started">Get Started</h4><a href="/contact.html#book" data-i18n="footer.book_cons">Book a Consultation</a><a href="/contact.html#rfp" data-i18n="footer.submit_rfp">Submit an RFP</a><a href="/contact.html" data-i18n="footer.contact_us">Contact Us</a><a href="mailto:hello@ramlatech.com">hello@ramlatech.com</a></div>
+    </div>
+    <div class="act-plus-bar">
+      <img src="/assets/assetsact-plus-logo-transparent.svg" alt="ACT Plus Digital Solutions" class="act-plus-logo-img" />
+      <span class="act-plus-text">A specialized division of <strong>ACT Plus Digital Solutions</strong></span>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Ramlatech. All rights reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.8rem;color:rgba(255,255,255,0.3);" data-i18n="footer.mono">ramlatech.com · Software Agency · Est. Palestine</span>
+    </div>
+  </div>
+</footer>
+<script src="/main.js" defer></script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript" defer></script>
+<script src="/lang.js" defer></script>
+</body>
+</html>
